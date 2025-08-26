@@ -231,6 +231,57 @@
 
 
 
-  
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 py-6 text-center text-sm text-gray-700">
+    <p>&copy; 2024 Placoso. All rights reserved.</p>
+    <p>
+      <a href="privacy-policy.html" class="hover:underline">Privacy Policy</a> | 
+      <a href="terms-of-service.html" class="hover:underline">Terms of Service</a>
+    </p>
+    <p>
+      Contact us: <a href="mailto:placosostudio@gmail.com" class="underline">placosostudio@gmail.com</a>
+    </p>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div id="cookie-banner" class="fixed bottom-0 w-full bg-black text-white p-4 hidden z-50 flex justify-between items-center">
+    <p>We use cookies to improve your experience. By continuing, you agree to our 
+      <a href="privacy-policy.html" class="underline">Privacy Policy</a>.
+    </p>
+    <button onclick="acceptCookies()" class="ml-4 px-3 py-1 bg-white text-black rounded">Accept</button>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Countdown
+    const countdownEl = document.getElementById('countdown');
+    const targetDate = new Date('2025-12-30T00:00:00').getTime();
+    function updateCountdown() {
+      const now = Date.now();
+      const distance = targetDate - now;
+      if (distance < 0) {
+        countdownEl.innerHTML = "DROP LAUNCHED!";
+        return;
+      }
+      const d = Math.floor(distance / (1000*60*60*24));
+      const h = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
+      const m = Math.floor((distance % (1000*60*60))/(1000*60));
+      const s = Math.floor((distance % (1000*60))/1000);
+      countdownEl.innerHTML = `${d}d ${h}h ${m}m ${s}s`;
+    }
+    setInterval(updateCountdown, 1000);
+
+    // Cookie Banner
+    if (!localStorage.getItem('cookiesAccepted')) {
+      document.getElementById('cookie-banner').style.display = 'flex';
+    }
+    function acceptCookies() {
+      localStorage.setItem('cookiesAccepted', 'true');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
+
+
