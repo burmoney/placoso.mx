@@ -1,290 +1,95 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Your Page Title</title>
-<!-- Your styles and other head elements -->
- 
-  
-<!-- Styles for responsive design and navigation -->
-<style>
-  /* Reset some default styles */
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Content-Rich Website</title>
 
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
+  <!-- AdSense Meta -->
+  <meta name="google-adsense-account" content="ca-pub-4985140418471415" />
 
-  /* Navigation styles */
-  nav {
-    background-color: #333;
-    padding: 1em;
-  }
+  <!-- Google AdSense Script -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4985140418471415" crossorigin="anonymous"></script>
 
-  nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    justify-content: center;
-  }
-
-  nav ul li {
-    margin: 0 15px;
-  }
-
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  nav ul li a:hover {
-    text-decoration: underline;
-  }
-
-  /* Main content styles */
-  main {
-    flex: 1;
-    padding: 20px;
-  }
-
-  /* Footer styles */
-  footer {
-    background-color: #222;
-    color: #fff;
-    padding: 15px;
-    text-align: center;
-  }
-
-  footer a {
-    color: #fff;
-    margin: 0 10px;
-    text-decoration: none;
-  }
-
-  footer a:hover {
-    text-decoration: underline;
-  }
-
-  /* Responsive adjustments */
-  @media(max-width: 600px) {
-    nav ul {
-      flex-direction: column;
+  <!-- Basic Styles -->
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+    nav { background-color: #333; padding: 1em; }
+    nav ul { display: flex; flex-wrap: wrap; list-style: none; justify-content: center; }
+    nav ul li { margin: 0 15px; }
+    nav ul li a { color: #fff; text-decoration: none; font-weight: bold; }
+    nav ul li a:hover { text-decoration: underline; }
+    main { flex: 1; padding: 20px; max-width: 900px; margin: auto; }
+    article { margin-bottom: 2em; }
+    article h2 { margin-bottom: 0.5em; color: #222; }
+    footer { background-color: #222; color: #fff; padding: 15px; text-align: center; }
+    footer a { color: #fff; margin: 0 10px; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    @media(max-width: 600px) {
+      nav ul { flex-direction: column; }
+      nav ul li { margin: 10px 0; }
     }
-    nav ul li {
-      margin: 10px 0;
-    }
-  }
-</style>
-  
-  <a href="https://trustedsource.com" target="_blank" rel="noopener noreferrer">Trusted Source</a>
- 
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-<title>My Content-Rich Website with Articles and Resources</title>
-
-<!-- Meta tags for AdSense -->
-<meta name="google-adsense-account" content="ca-pub-4985140418471415" />
-
-<!-- AMP and Ad scripts -->
-<script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4985140418471415" crossorigin="anonymous"></script>
-<script async src="https://cse.google.com/cse.js?cx=e6808899c3fc44d83"></script>
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+  </style>
 </head>
 <body>
 
-<article>
-  <h2>Sample Blog Post Title</h2>
-  <p>Date: October 2023</p>
-  <p>Write your engaging, original content here...</p>
-</article>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms of Service</a></li>
+    </ul>
+  </nav>
 
-  <h2>Privacy Policy</h2>
-<p>We value your privacy. This page explains how we collect, use, and protect your information.</p>
+  <!-- Main Content -->
+  <main>
+    <h1>Welcome to Our Content Hub</h1>
+    <p>We publish in-depth, original articles on health, technology, travel, productivity, and lifestyle. Our mission is to provide helpful, trustworthy information that improves your daily life.</p>
 
+    <!-- Example Articles -->
+    <article>
+      <h2>Mastering Time Management: Tips for a More Productive Day</h2>
+      <p><strong>Published:</strong> August 2025</p>
+      <p>Effective time management is crucial for reducing stress and achieving goals. By prioritizing tasks, setting realistic deadlines, and using tools like calendars and Pomodoro timers, you can drastically improve productivity...</p>
+      <a href="article-time-management.html">Read More</a>
+    </article>
 
-<h2>Contact Us</h2>
-<form>
-  <label>Name:</label><input type="text" name="name" />
-  <label>Email:</label><input type="email" name="email" />
-  <button type="submit">Send</button>
-</form>
+    <article>
+      <h2>The Ultimate Guide to Healthy Eating</h2>
+      <p><strong>Published:</strong> August 2025</p>
+      <p>Eating well is about making smarter choices, not strict dieting. Learn about balanced meals, portion control, hydration, and how superfoods can boost energy...</p>
+      <a href="article-healthy-eating.html">Read More</a>
+    </article>
 
-
-
-
-
-
-
-
-
-
-
-<h2>About Us</h2>
-<p>We are passionate content creators dedicated to providing valuable information across various topics to help you learn and grow.</p>
-
-
-
-
-
-
-
-  
-<a href="https://trustedsource.com" target="_blank" rel="noopener noreferrer">Trusted Source</a>
-<!-- Auto Ads for monetization -->
-<amp-auto-ads type="adsense" data-ad-client="ca-pub-4985140418471415"></amp-auto-ads>
-
-<h1>Welcome to Our Content-Rich Website</h1>
-
-<!-- About Section -->
-<section>
-  <h2>About Our Platform</h2>
-  <p>Our website is dedicated to delivering high-quality, detailed articles across a variety of topics including health, technology, travel, and personal development. We believe in providing valuable insights, practical tips, and well-researched content that helps our readers improve their lives and stay informed about current trends.</p>
-  <p>We update our site regularly with new content, ensuring that visitors always find fresh and relevant information. Our goal is to become a trusted resource for knowledge, inspiration, and actionable advice.</p>
-</section>
-
-<!-- Articles Section -->
-<section>
-  <h2>Our Latest Articles</h2>
-  
-  <article>
-    <h3>1. Mastering Time Management: Tips for a More Productive Day</h3>
-    <p>Effective time management is crucial for achieving your goals and reducing stress. This article explores proven strategies such as prioritizing tasks, creating daily routines, and eliminating distractions. Learn how tools like calendars, timers, and to-do lists can help you stay organized and maximize your productivity.</p>
-    <p>Implementing small changes to your daily habits can lead to significant improvements over time, helping you accomplish more with less effort.</p>
-  </article>
-  
-  <article>
-    <h3>2. The Ultimate Guide to Healthy Eating</h3>
-    <p>Eating well isn’t about strict dieting but about making smarter, sustainable choices. Discover how balanced meals, portion control, and mindful eating can boost your health. We cover topics like meal planning, superfoods, hydration, and reading nutrition labels effectively.</p>
-    <p>Adopting healthier eating habits can improve your energy levels, support weight management, and reduce the risk of chronic diseases.</p>
-  </article>
-  
-  <article>
-    <h3>3. Top Travel Destinations for Adventure Seekers</h3>
-    <p>If you crave excitement and new experiences, explore destinations like Queenstown in New Zealand, Costa Rica’s rainforests, or the Swiss Alps. We share travel tips, safety advice, and the best times to visit these locations for adventures such as hiking, diving, or mountain biking.</p>
-    <p>Planning your next adventure with these insights ensures unforgettable memories and maximum enjoyment.</p>
-  </article>
-  
-  <article>
-    <h3>4. How to Start a Successful Blog in 2024</h3>
-    <p>Starting a blog can be a rewarding way to share your passions and ideas. This guide covers choosing your niche, setting up your website, creating engaging content, and monetizing through ads and affiliate marketing. Learn about SEO strategies and building an audience over time.</p>
-    <p>With dedication and consistency, your blog can grow into a profitable online platform.</p>
-  </article>
-  
-  <article>
-    <h3>5. The Future of Technology: Trends to Watch</h3>
-    <p>Stay ahead by understanding the latest tech trends like artificial intelligence, blockchain, 5G, and sustainable innovations. We analyze how these technologies will shape industries, impact daily life, and create new opportunities.</p>
-    <p>Being informed about future trends helps individuals and businesses prepare and adapt to rapid technological changes.</p>
-  </article>
-</section>
-
-<!-- Search Functionality -->
-<div class="gcse-search"></div>
-
-<!-- Responsive Ad Unit -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4985140418471415"
-     data-ad-slot="3537489904"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<!-- Footer -->
-<footer>
-  <p>&copy; 2024 My Content Website. All rights reserved.</p>
-</footer>
-
-<!-- Navigation Menu -->
-<nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-  </ul>
-</nav>
-
-<!-- Main Content -->
- 
-
-<!-- Footer with links -->
-<footer>
-  <p>&copy; 2024 My Content Website. All rights reserved.</p>
-  <p>
-    <a href="index.html">Home</a> | 
-    <a href="about.html">About</a> | 
-    <a href="contact.html">Contact</a> | 
-    <a href="privacy-policy.html">Privacy Policy</a>
-  </p>
-</footer>
-
-
-
+    <!-- Ad Placement -->
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-client="ca-pub-4985140418471415"
+         data-ad-slot="3537489904"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-100 py-6 text-center text-sm text-gray-700">
-    <p>&copy; 2024 Placoso. All rights reserved.</p>
+  <footer>
+    <p>&copy; 2025 My Content Website. All rights reserved.</p>
     <p>
-      <a href="privacy-policy.html" class="hover:underline">Privacy Policy</a> | 
-      <a href="terms-of-service.html" class="hover:underline">Terms of Service</a>
-    </p>
-    <p>
-      Contact us: <a href="mailto:placosostudio@gmail.com" class="underline">placosostudio@gmail.com</a>
+      <a href="index.html">Home</a> | 
+      <a href="about.html">About</a> | 
+      <a href="articles.html">Articles</a> | 
+      <a href="contact.html">Contact</a> | 
+      <a href="privacy-policy.html">Privacy Policy</a> | 
+      <a href="terms.html">Terms</a>
     </p>
   </footer>
 
-  <!-- Cookie Banner -->
-  <div id="cookie-banner" class="fixed bottom-0 w-full bg-black text-white p-4 hidden z-50 flex justify-between items-center">
-    <p>We use cookies to improve your experience. By continuing, you agree to our 
-      <a href="privacy-policy.html" class="underline">Privacy Policy</a>.
-    </p>
-    <button onclick="acceptCookies()" class="ml-4 px-3 py-1 bg-white text-black rounded">Accept</button>
-  </div>
-
-  <!-- Scripts -->
-  <script>
-    // Countdown
-    const countdownEl = document.getElementById('countdown');
-    const targetDate = new Date('2025-12-30T00:00:00').getTime();
-    function updateCountdown() {
-      const now = Date.now();
-      const distance = targetDate - now;
-      if (distance < 0) {
-        countdownEl.innerHTML = "DROP LAUNCHED!";
-        return;
-      }
-      const d = Math.floor(distance / (1000*60*60*24));
-      const h = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
-      const m = Math.floor((distance % (1000*60*60))/(1000*60));
-      const s = Math.floor((distance % (1000*60))/1000);
-      countdownEl.innerHTML = `${d}d ${h}h ${m}m ${s}s`;
-    }
-    setInterval(updateCountdown, 1000);
-
-    // Cookie Banner
-    if (!localStorage.getItem('cookiesAccepted')) {
-      document.getElementById('cookie-banner').style.display = 'flex';
-    }
-    function acceptCookies() {
-      localStorage.setItem('cookiesAccepted', 'true');
-      document.getElementById('cookie-banner').style.display = 'none';
-    }
-  </script>
 </body>
 </html>
-
-
