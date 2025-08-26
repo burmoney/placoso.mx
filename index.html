@@ -1,6 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
+<!-- Styles for responsive design and navigation -->
+<style>
+  /* Reset some default styles */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  /* Navigation styles */
+  nav {
+    background-color: #333;
+    padding: 1em;
+  }
+
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+  }
+
+  nav ul li {
+    margin: 0 15px;
+  }
+
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+
+  /* Main content styles */
+  main {
+    flex: 1;
+    padding: 20px;
+  }
+
+  /* Footer styles */
+  footer {
+    background-color: #222;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+  }
+
+  footer a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  /* Responsive adjustments */
+  @media(max-width: 600px) {
+    nav ul {
+      flex-direction: column;
+    }
+    nav ul li {
+      margin: 10px 0;
+    }
+  }
+</style>
+  
   <a href="https://trustedsource.com" target="_blank" rel="noopener noreferrer">Trusted Source</a>
 <meta charset="UTF-8" />
 
@@ -22,6 +102,40 @@
 <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
 </head>
 <body>
+
+
+
+  <h2>Privacy Policy</h2>
+<p>We value your privacy. This page explains how we collect, use, and protect your information.</p>
+
+
+<h2>Contact Us</h2>
+<form>
+  <label>Name:</label><input type="text" name="name" />
+  <label>Email:</label><input type="email" name="email" />
+  <button type="submit">Send</button>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+<h2>About Us</h2>
+<p>We are passionate content creators dedicated to providing valuable information across various topics to help you learn and grow.</p>
+
+
+
+
+
+
+
+  
 <a href="https://trustedsource.com" target="_blank" rel="noopener noreferrer">Trusted Source</a>
 <!-- Auto Ads for monetization -->
 <amp-auto-ads type="adsense" data-ad-client="ca-pub-4985140418471415"></amp-auto-ads>
@@ -89,5 +203,35 @@
   <p>&copy; 2024 My Content Website. All rights reserved.</p>
 </footer>
 
+<!-- Navigation Menu -->
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+  </ul>
+</nav>
+
+<!-- Main Content -->
+<main>
+  <h1>Welcome to Our Content-Rich Website</h1>
+  <p>This is a sample page with a clear navigation menu, mobile responsiveness, and a footer with quick links. Fill this area with your articles, resources, or other content.</p>
+</main>
+
+<!-- Footer with links -->
+<footer>
+  <p>&copy; 2024 My Content Website. All rights reserved.</p>
+  <p>
+    <a href="index.html">Home</a> | 
+    <a href="about.html">About</a> | 
+    <a href="contact.html">Contact</a> | 
+    <a href="privacy-policy.html">Privacy Policy</a>
+  </p>
+</footer>
+
+
+
+  
 </body>
 </html>
