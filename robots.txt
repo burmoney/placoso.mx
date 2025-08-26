@@ -3,4 +3,4 @@ Disallow: /admin/
 Disallow: /cgi-bin/
 Allow: /
 
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://placosostudio.com.mx/sitemap.xml
