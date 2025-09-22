@@ -420,14 +420,103 @@
 
 
 
+
+
+
+
+
+
+  
+
+
   </style>
+
+  
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>PLACOSO STUDIO 3D Spin</title>
-<!-- External font -->
+
 <link href="https://fonts.cdnfonts.com/css/old-english-five" rel="stylesheet" />\
 <link href="test.css" rel="stylesheet" />
 
+  
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.dataLayer = window.dataLayer || [];
+
+    // Track page load (home view)
+    dataLayer.push({
+      'event': 'home_view',
+      'page_title': document.title,
+      'page_location': window.location.href
+    });
+
+    // Track navigation clicks
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(function(link) {
+      link.addEventListener('click', function () {
+        const linkText = link.textContent.trim();
+        const href = link.href;
+        // Push to GA4 & GTM
+        gtag('event', 'nav_click', {
+          'link_text': linkText,
+          'destination_url': href
+        });
+        dataLayer.push({
+          'event': 'nav_click',
+          'link_text': linkText,
+          'destination_url': href
+        });
+      });
+    });
+
+    // Track subscribe button click
+    const subscribeBtn = document.querySelector('.subscribe-btn');
+    if (subscribeBtn) {
+      subscribeBtn.addEventListener('click', function (e) {
+        e.preventDefault(); // Optional: stop default action
+        const btnText = subscribeBtn.textContent.trim();
+        dataLayer.push({
+          'event': 'subscribe_click',
+          'button_text': btnText
+        });
+        gtag('event', 'subscribe_click', {
+          'button_text': btnText
+        });
+      });
+    }
+
+    // Track shop link (optional specificity)
+    const shopLink = document.querySelector('a[href*="/shop"]');
+    if (shopLink) {
+      shopLink.addEventListener('click', function () {
+        const linkText = shopLink.textContent.trim();
+        const href = shopLink.href;
+        dataLayer.push({
+          'event': 'view_shop',
+          'link_text': linkText,
+          'destination_url': href
+        });
+        gtag('event', 'view_shop', {
+          'link_text': linkText,
+          'destination_url': href
+        });
+      });
+    }
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
  
 </head>
 <body>
