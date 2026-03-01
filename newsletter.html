@@ -89,23 +89,21 @@
   <div class="form-container">
     <h2>Subscribe to Our Newsletter</h2>
     <!-- Google Form for newsletter signup -->
-    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScTlkkMYCyx19rgtlWlzsAt-Jb6AuAZv73L0q2JZReXgFYXbQ/formResponse" target="_self" method="POST" id="newsletterForm">
-      <!-- Name -->
-      <label for="entry.1974726301">Name</label>
-      <input type="text" name="entry.1974726301" id="name" placeholder="Your Name" required />
-
-      <!-- Email -->
-      <label for="entry.329226581">Email *</label>
-      <input type="email" name="entry.329226581" id="email" placeholder="you@example.com" required />
-
-      <!-- Optional message or questions -->
-      <label for="entry.1718421104">Questions or Comments</label>
-      <textarea name="entry.1718421104" id="comments" rows="4" placeholder="Your message..."></textarea>
-
-      <!-- Submit Button -->
-      <button type="submit">Subscribe</button>
-    
-    </form>
+<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfoZij59mUeyCrBwTXcTs7N0MCWoEB1UeSjnEDjUmBWzyfsDw/formResponse" method="POST" target="_self">
+  <!-- Name -->
+  <label for="name">Full Name:</label><br>
+  <input type="text" id="name" name="entry.1125521261" required><br><br>
+  
+  <!-- Email -->
+  <label for="email">Email Address:</label><br>
+  <input type="email" id="email" name="entry.1291635818" required><br><br>
+  
+  <!-- Message or additional info -->
+  <label for="message">Message:</label><br>
+  <textarea id="message" name="entry.2088578609" rows="4" cols="50"></textarea><br><br>
+  
+  <button type="submit">Register</button>
+</form>
     <div class="success-message" id="successMessage">Thank you for subscribing!</div>
   </div>
   <a href="https://placosostudio.com/shop.html"><button>shop</button></a>
