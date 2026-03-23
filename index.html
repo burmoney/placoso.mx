@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init('YOUR_PUBLIC_KEY'); // Replace with your EmailJS public key
+   })();
+</script>
+
+
+
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("YOUR_PUBLIC_KEY"); // replace with your EmailJS public key
+  })();
+</script>
+
+
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Premium online shop selling high-quality t-shirts and apparel. Fast shipping and secure checkout.">
+<meta name="keywords" content="T-Shirt, Apparel, Online Shop, Premium Clothing, Fast Shipping">
+<meta name="author" content="Your Name or Company">
+
+<!-- Open Graph / Social -->
+<meta property="og:title" content="Premium T-Shirt Shop">
+<meta property="og:description" content="Buy high-quality t-shirts online with fast shipping and secure checkout.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="link-to-your-image.jpg">
+<meta property="og:url" content="https://yourwebsite.com">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Premium T-Shirt Shop">
+<meta name="twitter:description" content="Buy high-quality t-shirts online with fast shipping and secure checkout.">
+<meta name="twitter:image" content="link-to-your-image.jpg">
+
+
+  <title>Shop</title>
+  <style>
+      body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  header {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0;
+    font-weight: 700;
+  }
+    .page { display: none; }
+    .active { display: block; }
+    input, select { display: block; margin: 5px 0; padding: 8px; width: 250px; }
+    button { margin: 10px 0; padding: 10px; }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<style>
+  body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  header {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  /* Page styles */
+  .page {
+    display: none;
+    padding: 30px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  .active {
+    display: block;
+  }
+
+  /* Navigation buttons */
+  .btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+  .btn:hover {
+    background-color: #0056b3;
+  }
+
+  /* Product card styles */
+  .product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+  }
+  .product-card:hover {
+    transform: translateY(-2px);
+  }
+  .product-img {
+    width: 100%;
+    height: auto;
+  }
+  .product-info {
+    padding: 15px;
+    text-align: center;
+  }
+  .product-title {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  .product-price {
+    font-size: 1.1rem;
+    color: #e91e63;
+    font-weight: 600;
+  }
+
+  /* Layout grid for products */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  /* Cart styles */
+  #cartItems p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  #cartItems p span { font-weight: 600; }
+  #cartItems button {
+    background: none;
+    border: none;
+    color: #e53935;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  #cartSummary {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+
+  /* Input styles */
+  input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 16px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  /* Footer */
+  footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+  }
+</style>
+
+
+
+
+
+
+
+ <!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+
+
+
+</head>
+
+<body>
+
+<!-- PRODUCT -->
+<div id="product" class="page active">
+  <h1>T-Shirt - $45</h1>
+  <button onclick="addToCart()">Add to Cart</button>
+  <button onclick="goTo('cart')">Go to Cart</button>
+</div>
+
+<!-- CART -->
+<div id="cart" class="page">
+  <h1>Cart</h1>
+  <div id="cartItems"></div>
+  <p id="total"></p>
+
+  <button onclick="goTo('checkout1')">Checkout</button>
+</div>
+
+<!-- CHECKOUT STEP 1 -->
+<div id="checkout1" class="page">
+  <h1>Checkout</h1>
+
+  <input id="email" placeholder="Email Address">
+  <input id="firstName" placeholder="First Name">
+  <input id="lastName" placeholder="Last Name">
+  <input id="phone" placeholder="Phone (555-555-5555)">
+  <input id="company" placeholder="Company">
+  <input id="address" placeholder="Address">
+  <input id="city" placeholder="City">
+
+  <select id="state">
+    <option>Select State</option>
+    <option>CA</option>
+    <option>TX</option>
+  </select>
+
+  <input id="zip" placeholder="Zip Code">
+
+  <select id="country">
+    <option>United States</option>
+  </select>
+
+  <h3>Shipping</h3>
+  <select id="shipping">
+    <option value="4">Standard Shipping $4.00</option>
+    <option value="8">Express Shipping $8.00</option>
+    <option value="12">Overnight Shipping $12.00</option>
+  </select>
+
+  <button onclick="saveInfo()">Pay Now</button>
+  <button onclick="goTo('cart')">Back to Cart</button>
+</div>
+
+<!-- CHECKOUT STEP 2 -->
+<div id="checkout2" class="page">
+  <h1>Payment Details</h1>
+
+  <input placeholder="Card Number xxxx-xxxx-xxxx-xxxx">
+  <input placeholder="Exp Month 01">
+  <input placeholder="Exp Year 2024">
+  <input placeholder="Security Code 123">
+
+  <h2>Order Summary</h2>
+  <div id="summary"></div>
+
+  <button onclick="goTo('checkout3')">Continue</button>
+</div>
+
+<!-- STEP 3 -->
+<div id="checkout3" class="page">
+  <h1>Confirm Order</h1>
+  <button onclick="completeOrder()">Complete Order</button>
+</div>
+
+<!-- THANK YOU -->
+
+<div id="thankyou" class="page">
+  <h1>THANK YOU!</h1>
+
+  <h2>Order Summary</h2>
+  <div id="finalSummary"></div>
+
+  <button onclick="goTo('product')">Home</button>
+</div>
+
+<script>
+// NAVIGATION
+
+function goTo(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(page).classList.add('active');
+
+  if (page === 'cart') loadCart();
+  if (page === 'checkout2') loadSummary();
+  if (page === 'thankyou') loadFinalSummary(); // 👈 ADD THIS
+}
+
+
+ 
+
+// ADD TO CART
+function addToCart() {
+  // Product price is fixed at 800 pesos
+  let cart = [{ name: "T-Shirt", price: 800, qty: 1 }];
+  localStorage.setItem('cart', JSON.stringify(cart));
+  alert("Added!");
+}
+
+// LOAD CART
+function loadCart() {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let subtotal = 0;
+  let html = "";
+
+  // Build the cart items
+  cart.forEach(item => {
+    html += `${item.name} - $${item.price} MXN<br>`;
+    subtotal += item.price;
+  });
+
+  // Fixed shipping
+  let shipping = 200;
+
+  // Total calculation
+  let total = subtotal + shipping;
+
+  // Save total in localStorage
+  localStorage.setItem("total", total);
+
+  // Display
+  document.getElementById('cartItems').innerHTML = html;
+  document.getElementById('total').innerText =
+    `Subtotal: $${subtotal} MXN | Shipping: $${shipping} MXN | Total: $${total} MXN`;
+}
+
+
+// SAVE INFO
+function saveInfo() {
+  let data = {
+    email: document.getElementById('email').value,
+    name: document.getElementById('firstName').value + " " + document.getElementById('lastName').value,
+    phone: document.getElementById('phone').value,
+    address: document.getElementById('address').value,
+    city: document.getElementById('city').value,
+    zip: document.getElementById('zip').value,
+    shippingCost: Number(document.getElementById('shipping').value)
+  };
+
+  localStorage.setItem('user', JSON.stringify(data));
+
+  goTo('checkout2');
+}
+
+// SUMMARY
+function loadSummary() {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let user = JSON.parse(localStorage.getItem('user')) || {};
+
+  let subtotal = 45;
+  let tax = 2;
+  let shipping = user.shippingCost || 4;
+  let total = subtotal + tax + shipping;
+
+  document.getElementById('summary').innerHTML = `
+    T-Shirt<br>
+    Quantity: 1<br>
+    Subtotal: $${subtotal}<br>
+    Tax: $${tax}<br>
+    Shipping: $${shipping}<br>
+    <b>Total: $${total}</b><br><br>
+
+    <b>Billing</b><br>
+    ${user.name}<br>
+    ${user.email}<br>
+
+    <b>Shipping</b><br>
+    ${user.address}, ${user.city}, ${user.zip}<br>
+    Phone: ${user.phone}
+  `;
+}
+
+// COMPLETE
+function completeOrder() {
+  goTo('thankyou'); // go first
+  setTimeout(() => {
+    localStorage.clear(); // clear AFTER render
+  }, 1000);
+}
+ 
+</script>
+<script>
+  // Replace G-XXXXXXXXXX with your GA4 ID
+  function trackGA(eventName, params = {}) {
+    if (typeof gtag === "function") {
+      gtag('event', eventName, params);
+    }
+  }
+
+  // Track Add to Cart
+  function addToCart() {
+    let cart = [{ name: "T-Shirt", price: 800, qty: 1 }];
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert("Added!");
+    trackGA('add_to_cart', {
+      currency: 'MXN',
+      value: 800,
+      items: cart.map(item => ({ item_name: item.name, quantity: item.qty, price: item.price }))
+    });
+  }
+
+  // Track Checkout Start
+  function saveInfo() {
+    let data = {
+      email: document.getElementById('email').value,
+      name: document.getElementById('firstName').value + " " + document.getElementById('lastName').value,
+      phone: document.getElementById('phone').value,
+      address: document.getElementById('address').value,
+      city: document.getElementById('city').value,
+      zip: document.getElementById('zip').value,
+      shippingCost: Number(document.getElementById('shipping').value)
+    };
+
+    localStorage.setItem('user', JSON.stringify(data));
+
+    // Track checkout start
+    trackGA('begin_checkout', {
+      currency: 'MXN',
+      value: 1000,
+      items: [{ item_name: "T-Shirt", quantity: 1, price: 800 }]
+    });
+
+    goTo('checkout2');
+  }
+
+  // Track Order Completed
+
+ 
+
+ 
+
+function completeOrder() {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let user = JSON.parse(localStorage.getItem('user')) || {};
+
+  let subtotal = 800;       // fixed product price
+  let tax = 0;              // no tax
+  let shipping = 200;       // fixed shipping
+  let total = subtotal + tax + shipping;
+
+  // Send GA4 purchase event
+  trackGA('purchase', {
+    currency: 'MXN',
+    value: total,
+    shipping: shipping,
+    items: cart.map(item => ({
+      item_name: item.name,
+      quantity: item.qty,
+      price: item.price
+    })),
+    transaction_id: 'TXN-' + Date.now()
+  });
+
+  // Send sale notification email
+  sendSaleNotification(user, cart, total);
+
+  // Show thank-you page
+  goTo('thankyou');
+
+  // Clear localStorage after page render
+  setTimeout(() => localStorage.clear(), 1000);
+}
+
+
+
+  if (window.gtag) {
+  gtag('event', 'purchase', {
+    transaction_id: Date.now(),
+    value: 1000,
+    currency: 'MXN',
+    items: [{ name: 'T-Shirt', price: 800, quantity: 1 }],
+    shipping: 200
+  });
+}
+trackGA('add_to_cart', {
+  currency: 'MXN',
+  value: 800,
+  items: [{ item_name: "T-Shirt", quantity: 1, price: 800 }]
+});
+</script>
+</body>
+</html>
