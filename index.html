@@ -42,6 +42,203 @@
 
   <title>Shop</title>
   <style>
+
+
+    body {
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  background: #f0f2f5; /* softer background */
+  color: #333;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  background: linear-gradient(90deg, #1a1a1a, #333);
+  color: #fff;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+header h1 {
+  margin: 0;
+  font-weight: 900;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+/* Page display */
+.page {
+  display: none;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+.active {
+  display: block;
+}
+
+/* Buttons */
+button, .btn {
+  margin: 10px 0;
+  padding: 14px 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+button:hover, .btn:hover {
+  background: linear-gradient(45deg, #0056b3, #003f7f);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Inputs */
+input, select {
+  width: 100%;
+  padding: 14px;
+  margin: 8px 0 16px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+input:focus, select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0,123,255,0.3);
+  outline: none;
+}
+
+/* Products Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.product-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+.product-img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #eee;
+}
+.product-info {
+  padding: 20px;
+  text-align: center;
+}
+.product-title {
+  font-size: 1.4rem;
+  margin: 10px 0;
+  font-weight: 700;
+}
+.product-price {
+  font-size: 1.2rem;
+  color: #e91e63;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* Cart */
+#cartItems p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fdfdfd;
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+#cartItems p span {
+  font-weight: 600;
+}
+#cartItems button {
+  background: none;
+  border: none;
+  color: #e53935;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+#cartSummary {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+/* Thank You / Receipt */
+#finalSummary {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  max-width: 600px;
+  margin: 20px auto;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+#finalSummary h2, #finalSummary h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #222;
+}
+#finalSummary p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+#finalSummary hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 15px 0;
+}
+#finalSummary .receipt-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+#finalSummary .total {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #e91e63;
+  margin-top: 10px;
+}
+#finalSummary .section-title {
+  font-weight: 700;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #333;
+}
       body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -502,6 +699,113 @@ trackGA('add_to_cart', {
   value: 800,
   items: [{ item_name: "T-Shirt", quantity: 1, price: 800 }]
 });
+</script>
+
+<script>function loadFinalSummary() {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let user = JSON.parse(localStorage.getItem('user')) || {};
+
+  let subtotal = 0;
+  cart.forEach(item => subtotal += item.price);
+
+  let tax = 2;
+  let shipping = user.shippingCost || 4;
+  let total = subtotal + tax + shipping;
+
+  document.getElementById('finalSummary').innerHTML = `
+    <h3>${cart[0]?.name || "Item"}</h3>
+    <p>Quantity: 1</p>
+    <p><strong>$${subtotal}.00</strong></p>
+
+    <hr>
+
+    <p>Subtotal: $${subtotal}</p>
+    <p>Tax: $${tax}</p>
+    <p>Shipping: $${shipping}</p>
+    <h3>Total: $${total}</h3>
+
+    <hr>
+
+    <h3>Billing</h3>
+    <p>${user.name || ""}</p>
+    <p>${user.email || ""}</p>
+
+    <h3>Shipping</h3>
+    <p>${user.address || ""}</p>
+    <p>${user.city || ""}, ${user.zip || ""}</p>
+    <p>Phone: ${user.phone || ""}</p>
+
+    <hr>
+
+  <p><strong>Payment:</strong> Visa ending in 1234</p>
+  `;
+}
+
+
+
+function loadFinalSummary() {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let user = JSON.parse(localStorage.getItem('user')) || {};
+
+  let subtotal = 800; // fixed
+  let shipping = 200; // fixed
+  let total = subtotal + shipping;
+
+  document.getElementById('finalSummary').innerHTML = `
+    <h3>Order Summary</h3>
+    <p><strong>${cart[0]?.name || "T-Shirt"}</strong></p>
+    <p>Quantity: 1</p>
+    <p>Price: $${subtotal} MXN</p>
+
+    <hr>
+
+    <p>Subtotal: $${subtotal} MXN</p>
+    <p>Shipping: $${shipping} MXN</p>
+    <h3>Total: $${total} MXN</h3>
+
+    <hr>
+
+    <h4>Billing</h4>
+    <p>${user.name || ""}</p>
+    <p>${user.email || ""}</p>
+
+    <h4>Shipping</h4>
+    <p>${user.address || ""}</p>
+    <p>${user.city || ""}, ${user.zip || ""}</p>
+    <p>Phone: ${user.phone || ""}</p>
+
+    <hr>
+
+    <p><strong>Payment:</strong> Card ending in ****</p>
+  `;
+}
+;
+
+
+
+function sendSaleNotification(user, cart, total) {
+  const templateParams = {
+    customer_name: user.name,
+    email: user.email,
+    phone: user.phone,
+    address: user.address,
+    city: user.city,
+    zip: user.zip,
+    items: cart.map(i => i.name + ' x' + i.qty).join(", "),
+    total: total
+  };
+
+  emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+    .then(function(response) {
+       console.log('Sale notification sent', response.status, response.text);
+    }, function(error) {
+       console.error('Failed to send sale notification', error);
+    });
+}
+
+
+
+
 </script>
 </body>
 </html>
