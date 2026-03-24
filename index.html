@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GT-5R3V78SK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'GT-5R3V78SK');
+</script>
+
+
+
+        
 <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script type="text/javascript">
    (function(){
-      emailjs.init('YOUR_PUBLIC_KEY'); // Replace with your EmailJS public key
+      emailjs.init('AUtQm-ty0okqVLQoz'); // Replace with your EmailJS public key
    })();
 </script>
 
@@ -15,7 +29,7 @@
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
   (function(){
-    emailjs.init("YOUR_PUBLIC_KEY"); // replace with your EmailJS public key
+    emailjs.init("AUtQm-ty0okqVLQoz"); // replace with your EmailJS public key
   })();
 </script>
 
@@ -260,7 +274,7 @@ footer {
     input, select { display: block; margin: 5px 0; padding: 8px; width: 250px; }
     button { margin: 10px 0; padding: 10px; }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.apis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
 <!-- Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 <style>
@@ -394,18 +408,17 @@ footer {
 
 
 
-
-
-
- <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GT-5R3V78SK"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
+
+  gtag('config', 'GT-5R3V78SK');
 </script>
 
+ 
 
 
 
@@ -795,7 +808,7 @@ function sendSaleNotification(user, cart, total) {
     total: total
   };
 
-  emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+  emailjs.send('service_80xd72k', 'template_cga2o68', templateParams)
     .then(function(response) {
        console.log('Sale notification sent', response.status, response.text);
     }, function(error) {
