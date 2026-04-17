@@ -53,8 +53,17 @@ src="https://www.facebook.com/tr?id=330345064625520&ev=PageView&noscript=1"
 
 
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MQ8F6SZVJ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-
+  gtag('config', 'G-MQ8F6SZVJ9');
+</script>
+	
+G-MQ8F6SZVJ9
         
         <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=GT-5R3V78SK"></script>
@@ -473,12 +482,94 @@ footer {
 </script>
 
  
-
+<style>
+  @media (max-width: 600px) {
+    #consent-banner {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
 
 
 </head>
 
 <body>
+<!-- Consent Banner -->
+<div id="consent-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #1a1a1a; color: white; padding: 20px; z-index: 9999; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 15px; box-shadow: 0 -2px 10px rgba(0,0,0,0.2);">
+  <div style="flex: 1; font-size: 14px;">
+    🍪 We use cookies to improve your experience, analyze traffic, and personalize content. 
+    <a href="#" style="color: #007bff; text-decoration: underline;">Learn more</a>
+  </div>
+  <div style="display: flex; gap: 10px;">
+    <button id="decline-btn" style="background: #555; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Decline</button>
+    <button id="accept-btn" style="background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Accept All</button>
+  </div>
+</div>
+
+<script>
+  // Check if user already made a choice
+  if (localStorage.getItem('consentGiven') === 'true') {
+    document.getElementById('consent-banner').style.display = 'none';
+    enableTracking();
+  } else if (localStorage.getItem('consentGiven') === 'false') {
+    document.getElementById('consent-banner').style.display = 'none';
+    disableTracking();
+  }
+
+  // Accept button
+  document.getElementById('accept-btn').addEventListener('click', function() {
+    localStorage.setItem('consentGiven', 'true');
+    document.getElementById('consent-banner').style.display = 'none';
+    enableTracking();
+  });
+
+  // Decline button
+  document.getElementById('decline-btn').addEventListener('click', function() {
+    localStorage.setItem('consentGiven', 'false');
+    document.getElementById('consent-banner').style.display = 'none';
+    disableTracking();
+  });
+
+  function enableTracking() {
+    // Enable GA4
+    if (typeof gtag !== 'undefined') {
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'analytics_storage': 'granted'
+      });
+    }
+    
+    // Enable Facebook Pixel
+    if (typeof fbq !== 'undefined') {
+      fbq('consent', 'grant');
+    }
+    
+    console.log('Tracking enabled');
+  }
+
+  function disableTracking() {
+    // Disable GA4
+    if (typeof gtag !== 'undefined') {
+      gtag('consent', 'update', {
+        'ad_storage': 'denied',
+        'analytics_storage': 'denied'
+      });
+    }
+    
+    // Disable Facebook Pixel
+    if (typeof fbq !== 'undefined') {
+      fbq('consent', 'revoke');
+    }
+    
+    console.log('Tracking disabled');
+  }
+</script>
+
+
+
+
+
 
 
         <!-- Google Tag Manager (noscript) -->
