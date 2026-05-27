@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Placoso Studio Analytics & Goals</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 20px;
+    line-height: 1.6;
+  }
+  h1, h2 {
+    text-align: center;
+    color: #333;
+  }
+  section {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  th, td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  th {
+    background-color: #555;
+    color: #fff;
+  }
+  .section-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #222;
+  }
+</style>
+</head>
+<body>
+
+<h1>Placoso Studio Analytics & Goals</h1>
+
+<!-- Analytics Data Summary -->
+<section>
+  <div class="section-title">Overall Analytics</div>
+  <h2>Placoso Studio (mx)</h2>
+  <table>
+    <tr><th>Total Revenue</th><td>$17,000</td></tr>
+    <tr><th>Active Users</th><td>69</td></tr>
+    <tr><th>New Users</th><td>68</td></tr>
+    <tr><th>Avg Engagement Time</th><td>3s</td></tr>
+  </table>
+</section>
+
+<section>
+  <div class="section-title">Recent User Activity (Last 30 min)</div>
+  <p>Active Users: 1</p>
+  <p>Active Users per Minute: [Graph or data]</p>
+  <p>Top Countries: No data available</p>
+</section>
+
+<!-- Goals Tracking -->
+<section>
+  <div class="section-title">Goals Tracking</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Milestone</th>
+        <th>Target ($)</th>
+        <th>Cumulative Earnings ($)</th>
+        <th>Progress (%)</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Start</td>
+        <td>$0</td>
+        <td id="earnings">0.03</td>
+        <td id="percent">0.03%</td>
+        <td>Current earnings</td>
+      </tr>
+      <tr>
+        <td>10% of goal</td>
+        <td>$10</td>
+        <td id="c1">0.03</td>
+        <td id="p1">0.03%</td>
+        <td>Need to reach $10</td>
+      </tr>
+      <tr>
+        <td>25% of goal</td>
+        <td>$25</td>
+        <td id="c2">0.03</td>
+        <td id="p2">0.12%</td>
+        <td>Need to reach $25</td>
+      </tr>
+      <tr>
+        <td>50% of goal</td>
+        <td>$50</td>
+        <td id="c3">0.03</td>
+        <td id="p3">0.06%</td>
+        <td>Need to reach $50</td>
+      </tr>
+      <tr>
+        <td>75% of goal</td>
+        <td>$75</td>
+        <td id="c4">0.03</td>
+        <td id="p4">0.04%</td>
+        <td>Need to reach $75</td>
+      </tr>
+      <tr>
+        <td>Goal ($100)</td>
+        <td>$100</td>
+        <td id="c5">0.03</td>
+        <td id="p5">0.03%</td>
+        <td>Current earnings</td>
+      </tr>
+    </tbody>
+  </table>
+  <button onclick="updateProgress()">Update Percentages</button>
+</section>
+
+<!-- Additional Analytics & Charts -->
+<section>
+  <div class="section-title">Additional Data (Example)</div>
+  <p>Event count: 153 page views, 80 session starts, 17 purchases</p>
+  <p>Items purchased: 16 T-Shirts</p>
+  <p>Active users by country: US (36), Poland (9), Mexico (7)</p>
+</section>
+
+<script>
+  function updateProgress() {
+    const earnings = parseFloat(document.getElementById('earnings').innerText);
+    const milestones = [
+      { target: 10, percentId: 'p1', cumId: 'c1' },
+      { target: 25, percentId: 'p2', cumId: 'c2' },
+      { target: 50, percentId: 'p3', cumId: 'c3' },
+      { target: 75, percentId: 'p4', cumId: 'c4' },
+      { target: 100, percentId: 'p5', cumId: 'c5' },
+    ];
+    milestones.forEach(m => {
+      const cum = parseFloat(document.getElementById(m.cumId).innerText);
+      const progress = ((cum / m.target) * 100).toFixed(2);
+      document.getElementById(m.percentId).innerText = progress + '%';
+    });
+  }
+  // Initialize progress on load
+  window.onload = updateProgress;
+</script>
+
+</body>
+</html>
