@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Achievements Tracker</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 20px;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .container {
+    max-width: 1000px;
+    margin: auto;
+  }
+  .section {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+  h2 {
+    margin-top: 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+  }
+  /* Circular progress styles */
+  .circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: conic-gradient(
+      #4caf50 calc(var(--percent) * 1%), 
+      #ddd calc(var(--percent) * 1%)
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: auto;
+  }
+  .progress-label {
+    margin-top: 10px;
+    text-align: center;
+  }
+  /* Download button */
+  .download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+  }
+  .download-btn:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+<h1>Achievements Tracker</h1>
+<div class="container">
+
+  <!-- Summary / Info Section -->
+  <div class="section">
+    <h2>Overview & Progress</h2>
+    <p>This tracker helps you monitor your achievement progress toward verification, partnership, and creator goals.</p>
+    <a class="download-btn" href="achievements_tracker.html" download>Download Full Tracker</a>
+  </div>
+
+  <!-- Achievements Section -->
+  <div class="section">
+    <h2>Achievements Progress</h2>
+    <table>
+      <tr>
+        <th>Achievement</th>
+        <th>Progress</th>
+        <th>Progress Graph</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <td>Monetize My Channel (10 subs)</td>
+        <td>0/10</td>
+        <td>
+          <div class="circle" style="--percent: 0;">0%</div>
+        </td>
+        <td>Not Started</td>
+      </tr>
+      <tr>
+        <td>Show Stopper (50 viewers)</td>
+        <td>0.31/50</td>
+        <td>
+          <div class="circle" style="--percent: 0.62;">0.62%</div>
+        </td>
+        <td>In Progress</td>
+      </tr>
+      <tr>
+        <td>Hang with My Community (15 hours)</td>
+        <td>21.77/15</td>
+        <td>
+          <div class="circle" style="--percent: 145.13;">145%</div>
+        </td>
+        <td>Completed</td>
+      </tr>
+      <tr>
+        <td>Chatter Boxers (100 chatters)</td>
+        <td>12/100</td>
+        <td>
+          <div class="circle" style="--percent: 12;">12%</div>
+        </td>
+        <td>In Progress</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Additional Goals -->
+  <div class="section">
+    <h2>Growth & Community</h2>
+    <table>
+      <tr>
+        <th>Goal</th>
+        <th>Progress</th>
+        <th>Progress Graph</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <td>Monetize my channel (25 subs)</td>
+        <td>0/25</td>
+        <td>
+          <div class="circle" style="--percent: 0;">0%</div>
+        </td>
+        <td>Not Started</td>
+      </tr>
+      <tr>
+        <td>Grow my community (75 viewers)</td>
+        <td>0.31/75</td>
+        <td>
+          <div class="circle" style="--percent: 0.41;">0.41%</div>
+        </td>
+        <td>In Progress</td>
+      </tr>
+      <tr>
+        <td>Hang with My Community (30 hours)</td>
+        <td>21.77/30</td>
+        <td>
+          <div class="circle" style="--percent: 72.57;">72.57%</div>
+        </td>
+        <td>In Progress</td>
+      </tr>
+      <tr>
+        <td>Chatter Boxers (250 chatters)</td>
+        <td>12/250</td>
+        <td>
+          <div class="circle" style="--percent: 4.8;">4.8%</div>
+        </td>
+        <td>In Progress</td>
+      </tr>
+      <tr>
+        <td>Grow my following (250 followers)</td>
+        <td>6/250</td>
+        <td>
+          <div class="circle" style="--percent: 2.4;">2.4%</div>
+        </td>
+        <td>In Progress</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Achieved Achievements -->
+  <div class="section">
+    <h2>Accomplished Achievements</h2>
+    <ul>
+      <li>Path to Creator: Hang with My Community (5 hours completed)</li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>
