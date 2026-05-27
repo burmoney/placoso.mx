@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Audience Analytics Report</title>
+<!-- Include Chart.js for graphs -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+  }
+  h1, h2 {
+    text-align: center;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #f4f4f4;
+  }
+  canvas {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Audience Analytics Report</h1>
+<h2>Period: April 29 – May 26, 2026</h2>
+
+<h2>Basic Info</h2>
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Details</th>
+  </tr>
+  <tr>
+    <td>Total Revenue (placosostudio.com)</td>
+    <td>$17,000</td>
+  </tr>
+  <tr>
+    <td>Active Users (placosostudio.com)</td>
+    <td>69</td>
+  </tr>
+  <tr>
+    <td>New Users (placosostudio.com)</td>
+    <td>68</td>
+  </tr>
+  <tr>
+    <td>Avg Engagement Time (placosostudio.com)</td>
+    <td>3 seconds</td>
+  </tr>
+  <tr>
+    <td>Total Revenue (placosostudio.com.mx)</td>
+    <td>MX$7000 (approx USD equivalent)</td>
+  </tr>
+  <tr>
+    <td>Active Users (placosostudio.com.mx)</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>New Users (placosostudio.com.mx)</td>
+    <td>1</td>
+  </tr>
+</table>
+
+<h2>Top Countries by Active Users</h2>
+<table>
+  <tr>
+    <th>Country</th>
+    <th>Active Users</th>
+  </tr>
+  <tr>
+    <td>United States</td>
+    <td>36</td>
+  </tr>
+  <tr>
+    <td>(not set)</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>Poland</td>
+    <td>9</td>
+  </tr>
+  <tr>
+    <td>Mexico</td>
+    <td>7</td>
+  </tr>
+  <tr>
+    <td>China</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>Germany</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>United Kingdom</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Italy</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Sweden</td>
+    <td>1</td>
+  </tr>
+</table>
+
+<h2>Top Regions by Active Users</h2>
+<table>
+  <tr>
+    <th>Region</th>
+    <th>Active Users</th>
+  </tr>
+  <tr>
+    <td>Iowa</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>(not set)</td>
+    <td>13</td>
+  </tr>
+  <tr>
+    <td>Masovian Voivodeship</td>
+    <td>9</td>
+  </tr>
+  <tr>
+    <td>Colorado</td>
+    <td>8</td>
+  </tr>
+  <tr>
+    <td>Jalisco</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td>California</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>Oregon</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>England</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Florida</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Lombardy</td>
+    <td>1</td>
+  </tr>
+</table>
+
+<h2>Top Towns/Cities by Active Users</h2>
+<table>
+  <tr>
+    <th>Town/City</th>
+    <th>Active Users</th>
+  </tr>
+  <tr>
+    <td>Council Bluffs</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>(not set)</td>
+    <td>14</td>
+  </tr>
+  <tr>
+    <td>Warsaw</td>
+    <td>9</td>
+  </tr>
+  <tr>
+    <td>Aspen</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td>Guadalajara</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td>Idaho Springs</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>London</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Gallarate</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Gardarate</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Cape Coral</td>
+    <td>1</td>
+  </tr>
+</table>
+
+<h2>Graphs & Visualizations</h2>
+<canvas id="countryChart"></canvas>
+<canvas id="regionChart"></canvas>
+<canvas id="cityChart"></canvas>
+
+<script>
+  // Data for Country Chart
+  const countryData = {
+    labels: ['United States', '(not set)', 'Poland', 'Mexico', 'China', 'Germany', 'United Kingdom', 'Italy', 'Sweden'],
+    datasets: [{
+      label: 'Active Users by Country',
+      data: [36, 10, 9, 7, 3, 1, 1, 1, 1],
+      backgroundColor: [
+        'rgba(75, 192, 192, 0.6)',
+        'rgba(192, 192, 192, 0.6)',
+        'rgba(255, 206, 86, 0.6)',
+        'rgba(255, 99, 132, 0.6)',
+        'rgba(153, 102, 255, 0.6)',
+        'rgba(54, 162, 235, 0.6)',
+        'rgba(255, 159, 64, 0.6)',
+        'rgba(199, 199, 199, 0.6)',
+        'rgba(83, 102, 255, 0.6)'
+      ],
+      borderColor: [
+        'rgba(75, 192, 192, 1)',
+        'rgba(192, 192, 192, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(255, 99, 132, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 159, 64, 1)',
+        'rgba(199, 199, 199, 1)',
+        'rgba(83, 102, 255, 1)'
+      ],
+      borderWidth: 1
+    }]
+  };
+
+  // Data for Region Chart
+  const regionData = {
+    labels: ['Iowa', '(not set)', 'Masovian Voivodeship', 'Colorado', 'Jalisco', 'California', 'Oregon', 'England', 'Florida', 'Lombardy'],
+    datasets: [{
+      label: 'Active Users by Region',
+      data: [22, 13, 9, 8, 6, 2, 2, 1, 1, 1],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.6)',
+        'rgba(54, 162, 235, 0.6)',
+        'rgba(255, 206, 86, 0.6)',
+        'rgba(75, 192, 192, 0.6)',
+        'rgba(153, 102, 255, 0.6)',
+        'rgba(255, 159, 64, 0.6)',
+        'rgba(199, 199, 199, 0.6)',
+        'rgba(83, 102, 255, 0.6)',
+        'rgba(255, 99, 255, 0.6)',
+        'rgba(100, 150, 200, 0.6)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)',
+        'rgba(199, 199, 199, 1)',
+        'rgba(83, 102, 255, 1)',
+        'rgba(255, 99, 255, 1)',
+        'rgba(100, 150, 200, 1)'
+      ],
+      borderWidth: 1
+    }]
+  };
+
+  // Data for City Chart
+  const cityData = {
+    labels: ['Council Bluffs', '(not set)', 'Warsaw', 'Aspen', 'Guadalajara', 'Idaho Springs', 'London', 'Gallarate', 'Gardarate', 'Cape Coral'],
+    datasets: [{
+      label: 'Active Users by City',
+      data: [22, 14, 9, 6, 6, 1, 1, 1, 1, 1],
+      backgroundColor: [
+        'rgba(255, 206, 86, 0.6)',
+        'rgba(192, 192, 192, 0.6)',
+        'rgba(75, 192, 192, 0.6)',
+        'rgba(153, 102, 255, 0.6)',
+        'rgba(255, 99, 132, 0.6)',
+        'rgba(54, 162, 235, 0.6)',
+        'rgba(255, 159, 64, 0.6)',
+        'rgba(199, 199, 199, 0.6)',
+        'rgba(83, 102, 255, 0.6)',
+        'rgba(100, 150, 200, 0.6)'
+      ],
+      borderColor: [
+        'rgba(255, 206, 86, 1)',
+        'rgba(192, 192, 192, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 159, 64, 1)',
+        'rgba(199, 199, 199, 1)',
+        'rgba(83, 102, 255, 1)',
+        'rgba(100, 150, 200, 1)'
+      ],
+      borderWidth: 1
+    }]
+  };
+
+  // Create charts
+  const ctxCountry = document.getElementById('countryChart').getContext('2d');
+  const countryChart = new Chart(ctxCountry, {
+    type: 'bar',
+    data: countryData,
+    options: { responsive: true, plugins: { legend: { display: false } } }
+  });
+
+  const ctxRegion = document.getElementById('regionChart').getContext('2d');
+  const regionChart = new Chart(ctxRegion, {
+    type: 'pie',
+    data: regionData,
+    options: { responsive: true }
+  });
+
+  const ctxCity = document.getElementById('cityChart').getContext('2d');
+  const cityChart = new Chart(ctxCity, {
+    type: 'doughnut',
+    data: cityData,
+    options: { responsive: true }
+  });
+</script>
+</body>
+</html>
