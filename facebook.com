@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Performance Metrics</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+  }
+  h2 {
+    margin-top: 40px;
+    color: #2c3e50;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  th, td {
+    border: 1px solid #bdc3c7;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #ecf0f1;
+    font-weight: bold;
+  }
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+</style>
+</head>
+<body>
+
+<h2>Sheet 1: Performance Metrics</h2>
+<table>
+  <tr>
+    <th>Metric</th>
+    <th>Value</th>
+    <th>Change (%)</th>
+    <th>Note / Comments</th>
+  </tr>
+  <tr>
+    <td>Views</td>
+    <td>83.3K</td>
+    <td>+2.5%</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>From followers</td>
+    <td>1.7%</td>
+    <td>-90.9%</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>From non-followers</td>
+    <td>98.3%</td>
+    <td>+21.4%</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Viewers</td>
+    <td>60,028</td>
+    <td>+2.7%</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Content interactions</td>
+    <td>818</td>
+    <td>+1.0%</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Facebook visits</td>
+    <td>340</td>
+    <td>+146.4%</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>3-sec video views</td>
+    <td>29.9K</td>
+    <td>+6.3%</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>1-min video views</td>
+    <td>43</td>
+    <td>+437.5%</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Watch time</td>
+    <td>3d 15h</td>
+    <td>+4.6%</td>
+    <td></td>
+  </tr>
+</table>
+
+<h2>Sheet 2: Engagement & Growth</h2>
+<table>
+  <tr>
+    <th>Metric</th>
+    <th>Value</th>
+    <th>Change (%)</th>
+    <th>Note / Comments</th>
+  </tr>
+  <tr>
+    <td>Followers</td>
+    <td>52</td>
+    <td>+1.2%</td>
+    <td>Unfollows: 7 (-36.4%)</td>
+  </tr>
+  <tr>
+    <td>Unfollows</td>
+    <td>7</td>
+    <td>-36.4%</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Net followers</td>
+    <td>45</td>
+    <td>+742.9%</td>
+    <td></td>
+  </tr>
+</table>
+
+<h2>Sheet 3: Goals & Progress</h2>
+<table>
+  <tr>
+    <th>Goal</th>
+    <th>Progress</th>
+    <th>Percentage Complete</th>
+    <th>Date Range</th>
+    <th>Notes</th>
+  </tr>
+  <tr>
+    <td>Grow Facebook Page likes</td>
+    <td>5.7K/4</td>
+    <td>141.6%</td>
+    <td>May 25 - Jun 22</td>
+    <td>Surpassed goal</td>
+  </tr>
+  <tr>
+    <td>Grow Instagram followers</td>
+    <td>-125/-5.9K</td>
+    <td>-2%</td>
+    <td>May 25 - Jun 22</td>
+    <td>Slight decrease</td>
+  </tr>
+</table>
+
+<h2>Sheet 4: Content & Link Clicks</h2>
+<table>
+  <tr>
+    <th>Metric</th>
+    <th>Value</th>
+    <th>Change (%)</th>
+    <th>Notes</th>
+  </tr>
+  <tr>
+    <td>Content interactions</td>
+    <td>818</td>
+    <td>+1.0%</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Facebook link clicks</td>
+    <td>2</td>
+    <td>+100%</td>
+    <td></td>
+  </tr>
+</table>
+
+<h2>Additional Performance Details</h2>
+<table>
+  <tr>
+    <th>Metric</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>Total approximate earnings</td>
+    <td>$0.03</td>
+  </tr>
+  <tr>
+    <td>Reels earnings</td>
+    <td>$0.03</td>
+  </tr>
+  <tr>
+    <td>Photos earnings</td>
+    <td>$0.00</td>
+  </tr>
+  <tr>
+    <td>Stories earnings</td>
+    <td>$0.00</td>
+  </tr>
+  <tr>
+    <td>Text earnings</td>
+    <td>$0.00</td>
+  </tr>
+  <tr>
+    <td>Views</td>
+    <td>83.3K</td>
+  </tr>
+  <tr>
+    <td>3-sec views</td>
+    <td>29.9K</td>
+  </tr>
+  <tr>
+    <td>1-min views</td>
+    <td>43</td>
+  </tr>
+  <tr>
+    <td>Content interactions</td>
+    <td>818</td>
+  </tr>
+  <tr>
+    <td>Watch time</td>
+    <td>3d 15h</td>
+  </tr>
+  <tr>
+    <td>Views breakdown (Apr 29 - May 26)</td>
+    <td>Total: 83,260</td>
+  </tr>
+  <tr>
+    <td>Viewers</td>
+    <td>60,028</td>
+  </tr>
+</table>
+
+</body>
+</html>
