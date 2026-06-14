@@ -104,13 +104,155 @@ footer a {
   text-decoration: underline;
 }
 </style>
+
+<style>
+  /* Basic styling for the menu */
+  .main-nav {
+    background-color: #222;
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+  }
+  .nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .nav-item {
+    position: relative;
+    margin-right: 20px;
+  }
+  .nav-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+    font-weight: 600;
+  }
+  .nav-link:hover,
+  .nav-item.active > .nav-link {
+    background-color: #444;
+  }
+  /* Dropdown styles */
+  .has-dropdown > .nav-link {
+    cursor: pointer;
+  }
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    margin-top: 2px;
+    min-width: 200px;
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+  }
+  .dropdown-item {
+    position: relative;
+  }
+  .dropdown-item > a {
+    padding: 10px 15px;
+    display: block;
+    color: #fff;
+  }
+  .dropdown-item > a:hover {
+    background-color: #555;
+  }
+  /* Show dropdown when active */
+  .show {
+    display: block;
+  }
+  /* Arrow indicator */
+  .arrow {
+    font-size: 0.8em;
+    margin-left: 5px;
+  }
+</style>
+
+<script>
+  function toggleDropdown(e) {
+    e.preventDefault();
+    const link = e.currentTarget;
+    const parentLi = link.closest('.has-dropdown');
+    const submenu = parentLi.querySelector('.dropdown-menu');
+
+    // Toggle display
+    submenu.classList.toggle('show');
+
+    // Toggle aria-expanded
+    const expanded = link.getAttribute('aria-expanded') === 'true';
+    link.setAttribute('aria-expanded', String(!expanded));
+  }
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', function (e) {
+    document.querySelectorAll('.has-dropdown').forEach(function (li) {
+      if (!li.contains(e.target)) {
+        li.querySelector('.dropdown-menu').classList.remove('show');
+        li.querySelector('.nav-link').setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+</script>
+ 
+
 </head>
 <body>
 
  
+ 
+ 
+
+
+
+ 
+<div id="navbar">
+
+			 
+<nav aria-label="Main Navigation" class="main-nav">
+  <ul class="nav-list">
+    <li class="nav-item active">
+      <a href="/" class="nav-link">Inicio</a>
+    </li>
+    <li class="nav-item has-dropdown">
+      <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false" onclick="toggleDropdown(event)">Colecciones
+        <span class="arrow" aria-hidden="true">▼</span>
+      </a>
+      <ul class="dropdown-menu">
+        <li class="has-dropdown">
+          <a href="#" aria-haspopup="true" aria-expanded="false" onclick="toggleDropdown(event)">Clásico
+            <span class="arrow" aria-hidden="true">▼</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/product1" class="nav-link">Product 1</a></li>
+            <li><a href="/product2" class="nav-link">Product 2</a></li>
+            <li><a href="/product3" class="nav-link">Product 3</a></li>
+          </ul>
+        </li>
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/shop" class="nav-link">Shop</a></li>
+        <li><a href="/about" class="nav-link">About Us</a></li>
+        <li><a href="/contact" class="nav-link">Contact</a></li>
+        <li><a href="/privacy-policy" class="nav-link">Privacy Policy</a></li>
+        <li><a href="/terms-and-conditions" class="nav-link">Terms & Conditions</a></li>
+        <li><a href="/disclaimer" class="nav-link">Disclaimer</a></li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a href="/contact" class="nav-link">Contacto</a>
+    </li>
+  </ul>
+</nav>
+ 
+ 
+</div>
 
 <div id="data">
   <div class="container">
+    <a> <img src="images/logo.png" alt="Placoso_Studio" class="logo-img transition-soft-slow " width="1080" height="1080"></a>
     <h2 class="text-center">Burzache Milliones</h2>
     <h3 class="text-center">Discover the Music & More</h3>
 
