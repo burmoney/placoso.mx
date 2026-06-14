@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Placoso Studio - Zapopan, Jalisco</title>
+  <meta name="description" content="Get in touch with Placoso Studio for custom apparel inquiries, streetwear drops, or creative collaborations in Zapopan." />
+
+  <!-- Google Fonts -->
+  <link href="//fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" />
+
+  <!-- Styles: Consolidated and cleaned -->
+  <style>
+    /* Reset and base styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #333;
+      background-color: #fff;
+    }
+
+    /* Utility classes */
+    .hidden { display: none !important; }
+    .flex { display: flex; }
+    .flex-wrap { flex-wrap: wrap; }
+    .center { justify-content: center; align-items: center; }
+    .space-between { justify-content: space-between; }
+    .relative { position: relative; }
+    .absolute { position: absolute; }
+    .fixed { position: fixed; }
+    .text-center { text-align: center; }
+    .text-left { text-align: left; }
+    .text-right { text-align: right; }
+    .uppercase { text-transform: uppercase; }
+    .bold { font-weight: 700; }
+    .small { font-size: 0.85em; }
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Navigation styles */
+    nav.main-nav {
+      background-color: #222;
+      padding: 10px 20px;
+      font-family: Arial, sans-serif;
+    }
+    .nav-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .nav-item {
+      position: relative;
+      margin-right: 20px;
+    }
+    .nav-link {
+      color: #fff;
+      padding: 8px 12px;
+      font-weight: 600;
+      display: block;
+    }
+    .nav-link:hover,
+    .active > .nav-link {
+      background-color: #444;
+    }
+    /* Dropdown styles */
+    .has-dropdown > .nav-link {
+      cursor: pointer;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #333;
+      min-width: 200px;
+      z-index: 1000;
+      list-style: none;
+    }
+    .dropdown-menu.show {
+      display: block;
+    }
+    .dropdown-item > a {
+      padding: 10px 15px;
+      display: block;
+      color: #fff;
+    }
+    .dropdown-item > a:hover {
+      background-color: #555;
+    }
+    .arrow {
+      margin-left: 5px;
+      font-size: 0.8em;
+    }
+
+    /* Header styles */
+  </style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Navigation Menu -->
+<nav aria-label="Main Navigation" class="main-nav">
+  <ul class="nav-list">
+    <li class="nav-item active">
+      <a href="/" class="nav-link">Inicio</a>
+    </li>
+    <li class="nav-item has-dropdown">
+      <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false" onclick="toggleDropdown(event)">
+        Colecciones <span class="arrow">▼</span>
+      </a>
+      <ul class="dropdown-menu">
+        <li class="has-dropdown">
+          <a href="#" aria-haspopup="true" aria-expanded="false" onclick="toggleDropdown(event)">
+            Clásico <span class="arrow">▼</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/product1" class="nav-link">Product 1</a></li>
+            <li><a href="/product2" class="nav-link">Product 2</a></li>
+            <li><a href="/product3" class="nav-link">Product 3</a></li>
+          </ul>
+        </li>
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/shop" class="nav-link">Shop</a></li>
+        <li><a href="/about" class="nav-link">About Us</a></li>
+        <li><a href="/contact" class="nav-link">Contacto</a></li>
+        <li><a href="/privacy-policy" class="nav-link">Privacy Policy</a></li>
+        <li><a href="/terms-and-conditions" class="nav-link">Terms & Conditions</a></li>
+        <li><a href="/disclaimer" class="nav-link">Disclaimer</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<!-- Main Content -->
+<main>
+  <!-- Welcome Message -->
+  <section style="padding: 20px; text-align:center;">
+    <h2>PLACOSO PERO NO MALO</h2>
+    <p style="margin-top:10px;">HECHO A MANO</p>
+  </section>
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Footer with legal -->
+  <footer style="margin-top:40px; padding:20px; background:#222; text-align:center; color:#fff;">
+    <p>&copy; 2026 Placoso Studio. <a href="/privacy-policy" style="color:white;">Privacy Policy</a></p>
+  </footer>
+</main>
+
+<!-- Scripts for dropdown toggle -->
+<script>
+  function toggleDropdown(e) {
+    e.preventDefault();
+    const link = e.currentTarget;
+    const parentLi = link.closest('.has-dropdown');
+    const submenu = parentLi.querySelector('.dropdown-menu');
+    submenu.classList.toggle('show');
+
+    // Toggle aria-expanded
+    const expanded = link.getAttribute('aria-expanded') === 'true';
+    link.setAttribute('aria-expanded', String(!expanded));
+  }
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', function (e) {
+    document.querySelectorAll('.has-dropdown').forEach(function (li) {
+      if (!li.contains(e.target)) {
+        li.querySelector('.dropdown-menu').classList.remove('show');
+        li.querySelector('.nav-link').setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
