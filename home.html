@@ -10,14 +10,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
 
   <style>
-    /* Reset */
+    /* Reset and base styles */
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    /* Body styles with elegant background */
     body {
       font-family: 'Montserrat', sans-serif;
       font-size: 14px;
@@ -26,245 +25,145 @@
       margin-top: 0;
     }
 
-    /* Gold Top Header */
-    header {
-      background: linear-gradient(90deg, #d4af37, #ffd700); /* Gold gradient */
-      padding: 20px 40px;
+    /* Navigation Bar */
+#navbar {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: 999;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      background: linear-gradient(90deg, #d4af37, #ffd700);
+      padding: 10px 20px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2em;
-      color: #fff;
-      letter-spacing: 2px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+#navbar .logo-container {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      justify-content: center;
     }
 
-    /* Navigation styles, optional for gold theme */
+#navbar .logo-container img {
+      max-height: 120px;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      display: block;
+    }
+
 nav {
-  display: flex;
-  gap: 15px;
-}
+      display: flex;
+      gap: 15px;
+    }
 nav a {
-  color: #fff;
-  font-weight: 700;
-  text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: background 0.3s;
-}
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
 nav a:hover {
-  background-color: rgba(255,255,255,0.2);
-}
+      background-color: rgba(255,255,255,0.2);
+    }
 
-/* Main Content Styles */
+    /* Main Content Styles */
 #data {
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      margin-top: 150px; /* space for fixed navbar */
+      text-align: center;
+    }
 h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2em;
-  margin-top: 20px;
-  color: #222;
-}
+      font-family: 'Playfair Display', serif;
+      font-size: 2em;
+      margin-top: 20px;
+      color: #222;
+    }
 h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5em;
-  margin-top: 15px;
-}
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5em;
+      margin-top: 15px;
+    }
 iframe {
-  width: 100%;
-  max-width: 560px;
-  height: 315px;
-  margin: 20px 0;
-}
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+      margin: 20px 0;
+    }
 img {
-  max-width: 100%;
-  height: auto;
-  margin: 20px 0;
-  border-radius: 10px;
-}
+      max-width: 100%;
+      height: auto;
+      margin: 20px 0;
+      border-radius: 10px;
+    }
+p {
+      font-size: 1.5em;
+      margin-top: 20px;
+    }
+blockquote {
+      font-size: 1.2em;
+      font-style: italic;
+      margin: 20px 0;
+      padding: 10px;
+      background: rgba(255,255,255,0.8);
+      border-radius: 8px;
+    }
 footer {
-  margin-top: 50px;
-  padding: 20px;
-  background-color: #222;
-  color: #fff;
-  text-align: center;
-}
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+    }
 footer a {
-  color: #fff;
-  text-decoration: underline;
-}
-</style>
-
-<style>
-  /* Basic styling for the menu */
-  .main-nav {
-    background-color: #222;
-    padding: 10px 20px;
-    font-family: Arial, sans-serif;
-  }
-  .nav-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .nav-item {
-    position: relative;
-    margin-right: 20px;
-  }
-  .nav-link {
-    color: #fff;
-    text-decoration: none;
-    padding: 8px 12px;
-    display: block;
-    font-weight: 600;
-  }
-  .nav-link:hover,
-  .nav-item.active > .nav-link {
-    background-color: #444;
-  }
-  /* Dropdown styles */
-  .has-dropdown > .nav-link {
-    cursor: pointer;
-  }
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #333;
-    margin-top: 2px;
-    min-width: 200px;
-    z-index: 1000;
-    list-style: none;
-    padding: 0;
-  }
-  .dropdown-item {
-    position: relative;
-  }
-  .dropdown-item > a {
-    padding: 10px 15px;
-    display: block;
-    color: #fff;
-  }
-  .dropdown-item > a:hover {
-    background-color: #555;
-  }
-  /* Show dropdown when active */
-  .show {
-    display: block;
-  }
-  /* Arrow indicator */
-  .arrow {
-    font-size: 0.8em;
-    margin-left: 5px;
-  }
-</style>
-
-<script>
-  function toggleDropdown(e) {
-    e.preventDefault();
-    const link = e.currentTarget;
-    const parentLi = link.closest('.has-dropdown');
-    const submenu = parentLi.querySelector('.dropdown-menu');
-
-    // Toggle display
-    submenu.classList.toggle('show');
-
-    // Toggle aria-expanded
-    const expanded = link.getAttribute('aria-expanded') === 'true';
-    link.setAttribute('aria-expanded', String(!expanded));
-  }
-
-  // Close dropdowns when clicking outside
-  document.addEventListener('click', function (e) {
-    document.querySelectorAll('.has-dropdown').forEach(function (li) {
-      if (!li.contains(e.target)) {
-        li.querySelector('.dropdown-menu').classList.remove('show');
-        li.querySelector('.nav-link').setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-</script>
- 
-
+      color: #fff;
+      text-decoration: underline;
+    }
+  </style>
+  <!-- Optional: Add script for dropdown menu if needed -->
 </head>
 <body>
 
- 
- 
- 
-
-
-
- 
+<!-- Navigation Bar -->
 <div id="navbar">
-
-			 
-<nav aria-label="Main Navigation" class="main-nav">
-  <ul class="nav-list">
-    <li class="nav-item active">
-      <a href="/" class="nav-link">Inicio</a>
-    </li>
-    <li class="nav-item has-dropdown">
-      <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false" onclick="toggleDropdown(event)">Colecciones
-        <span class="arrow" aria-hidden="true">▼</span>
-      </a>
-      <ul class="dropdown-menu">
-        <li class="has-dropdown">
-          <a href="#" aria-haspopup="true" aria-expanded="false" onclick="toggleDropdown(event)">Clásico
-            <span class="arrow" aria-hidden="true">▼</span>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="/product1" class="nav-link">Product 1</a></li>
-            <li><a href="/product2" class="nav-link">Product 2</a></li>
-            <li><a href="/product3" class="nav-link">Product 3</a></li>
-          </ul>
-        </li>
-        <li><a href="/" class="nav-link">Home</a></li>
-        <li><a href="/shop" class="nav-link">Shop</a></li>
-        <li><a href="/about" class="nav-link">About Us</a></li>
-        <li><a href="/contact" class="nav-link">Contact</a></li>
-        <li><a href="/privacy-policy" class="nav-link">Privacy Policy</a></li>
-        <li><a href="/terms-and-conditions" class="nav-link">Terms & Conditions</a></li>
-        <li><a href="/disclaimer" class="nav-link">Disclaimer</a></li>
-      </ul>
-    </li>
-    <li class="nav-item">
-      <a href="/contact" class="nav-link">Contacto</a>
-    </li>
-  </ul>
-</nav>
- 
- 
+  <div class="logo-container">
+    <a href="https://burmoney.github.io/placoso/">
+      <img src="images/logo.png" alt="Placoso_Studio Logo" />
+    </a>
+  </div>
+  <nav>
+    <a href="https://www.youtube.com/channel/UCPthqEpbaFfblf2DXywLrzA?view_as=subscriber" target="_blank">YouTube</a>
+    <a href="https://soundcloud.com/burzache-milliones" target="_blank">SoundCloud</a>
+    <a href="https://offtop.co/u/IKci15UCbD" target="_blank">OffTop</a>
+    <a href="https://noisey.vice.com/es/topic/burzache-milliones" target="_blank">Music</a>
+    <a href="http://www.witchipedia.com/zodiac:virgo" target="_blank">Virgo</a>
+  </nav>
 </div>
 
+<!-- Main Content -->
 <div id="data">
   <div class="container">
-    <a> <img src="images/logo.png" alt="Placoso_Studio" class="logo-img transition-soft-slow " width="1080" height="1080"></a>
     <h2 class="text-center">Burzache Milliones</h2>
     <h3 class="text-center">Discover the Music & More</h3>
 
+    <!-- YouTube Videos -->
     <iframe src="https://www.youtube.com/embed/pJAjiLdtSOE?si=9UEnULPQM6kRe-7u" allowfullscreen></iframe>
     <iframe src="https://www.youtube.com/embed/YBgggjfDVng?si=aFqa7aVSCQ-JypcJ" allowfullscreen></iframe>
 
+    <!-- Images -->
     <img src="https://scontent.fmex11-1.fna.fbcdn.net/v/t1.0-9/25398841_1767190980021556_2526742297920042431_n.jpg?oh=bfd8dff976cbed5ac45a196cd74bbfd9&oe=5B490522" alt="Burzache Image" />
     <img src="https://i.pinimg.com/originals/14/92/d6/1492d613d333c1a3465dd8f8dcf84b74.gif" alt="Animated" />
 
+    <!-- Quote -->
     <p style="font-size:150%; margin-top:20px;">"Can't you see, We all Stuck In The Same System!"</p>
     <blockquote>- burzache milliones</blockquote>
 
+    <!-- External Links -->
     <div style="margin-top:20px;">
       <a href="https://www.youtube.com/channel/UCPthqEpbaFfblf2DXywLrzA?view_as=subscriber" target="_blank">YouTube</a> |
       <a href="https://offtop.co/u/IKci15UCbD" target="_blank">OffTop</a> |
@@ -274,6 +173,7 @@ footer a {
   </div>
 </div>
 
+<!-- Footer -->
 <footer>
   <p>&copy; 2026 Placoso Studio. <a href="/privacy-policy">Privacy Policy</a></p>
 </footer>
