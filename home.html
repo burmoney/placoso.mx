@@ -1,4 +1,14 @@
- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>PLACOSO STUDIO | CYBER UNIVERSE</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+
+<style>
+   
 
 .nav-links a:hover{
   color:var(--pink);
@@ -170,4 +180,340 @@ footer{
       100% { opacity: 0; }
     }
  
+:root{
+  --bg:#05070d;
+  --blue:#2f7bff;
+  --blue2:#00d4ff;
+  --card:#0b1220;
+  --text:#ffffff;
+  --muted:#9bb0c9;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* ================= LOADING SCREEN ================= */
+#loader{
+  position:fixed;
+  inset:0;
+  background:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  z-index:99999;
+}
+
+.glitch{
+  font-size:2rem;
+  font-weight:900;
+  letter-spacing:4px;
+  color:var(--blue);
+  animation:glitch 1s infinite;
+}
+
+@keyframes glitch{
+  0%{transform:translate(0);}
+  20%{transform:translate(-2px,2px);}
+  40%{transform:translate(2px,-2px);}
+  60%{transform:translate(-1px,1px);}
+  80%{transform:translate(1px,-1px);}
+  100%{transform:translate(0);}
+}
+
+/* ================= NAV ================= */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:9999;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  background:rgba(0,0,0,.5);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+  font-weight:900;
+  letter-spacing:3px;
+  color:var(--blue);
+  text-decoration:none;
+}
+
+nav{
+  display:flex;
+  gap:20px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-size:.8rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+nav a:hover{
+  color:var(--blue2);
+}
+
+/* ================= HERO VIDEO ================= */
+.hero{
+  height:100vh;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
+}
+
+.hero video{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-2;
+  filter:brightness(.4);
+}
+
+.hero h1{
+  font-size:4rem;
+  font-weight:900;
+  letter-spacing:4px;
+  background:linear-gradient(90deg,var(--blue),var(--blue2));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+  max-width:700px;
+  margin-top:20px;
+  color:var(--muted);
+}
+
+.btn{
+  margin-top:30px;
+  padding:14px 40px;
+  border:1px solid var(--blue);
+  border-radius:50px;
+  color:white;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.btn:hover{
+  background:var(--blue);
+  box-shadow:0 0 30px rgba(47,123,255,.6);
+}
+
+/* ================= SECTIONS ================= */
+section{
+  padding:100px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.title{
+  text-align:center;
+  font-size:2.5rem;
+  font-weight:900;
+  margin-bottom:40px;
+}
+
+/* ================= MUSIC PLAYER ================= */
+.player{
+  background:var(--card);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:20px;
+  padding:20px;
+  text-align:center;
+}
+
+audio{
+  width:100%;
+  margin-top:10px;
+}
+
+/* ================= SHOP ================= */
+.shop{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.product{
+  background:var(--card);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:18px;
+  padding:20px;
+  transition:.3s;
+}
+
+.product:hover{
+  transform:translateY(-10px);
+  border-color:var(--blue);
+}
+
+.product h3{
+  color:var(--blue);
+}
+
+.price{
+  color:var(--muted);
+  margin:10px 0;
+}
+
+.buy{
+  display:inline-block;
+  padding:10px 20px;
+  border:1px solid var(--blue);
+  border-radius:30px;
+  color:white;
+  text-decoration:none;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  padding:50px 20px;
+  text-align:center;
+  color:var(--muted);
+  border-top:1px solid rgba(255,255,255,.08);
+}
 </style>
+</head>
+
+<body>
+
+<!-- LOADING -->
+<div id="loader">
+  <div class="glitch">THE WORLD IS YOURS..</div>
+</div>
+
+<!-- NAV -->
+<header>
+  <li class="nav-item">
+        <div class="logo-container">
+          <a href="/">
+            
+             <img src="images/logo.png" alt="Placoso_Studio Logo" style="max-height: 120px; width: auto; filter: brightness(0) invert(1);">
+          </a>
+        </div>
+      </li>
+  <nav>
+    <a href="#placoso">Placoso</a>
+    <a href="#burzache">Burzache</a>
+    <a href="#muzty">Muzty</a>
+    <a href="#shop">Shop</a>
+  </nav>
+</header>
+
+<!-- HERO VIDEO -->
+<section class="hero">
+  <video autoplay muted loop>
+    <source src="https://cdn.coverr.co/videos/coverr-city-lights-5836/1080p.mp4">
+  </video>
+<section class="hero">
+  <h1>Built From Pain</h1>
+  <p>
+    Placoso Studio is a cyber-streetwear identity.
+    Not fashion. Not trends. A statement of survival and evolution.
+  </p>
+
+  <a class="btn" href="#shop">Enter Drop</a>
+
+  <div class="slideshow-container">
+    <div id="slideshow">
+      <img src="https://www.placosostudio.com.mx/images/hat1.png" class="slide-image" />
+      <img src="https://www.placosostudio.com.mx/images/hat1left.png" class="slide-image" />
+      <img src="https://www.placosostudio.com.mx/images/hat1back.png" class="slide-image" />
+      <img src="https://www.placosostudio.com.mx/images/hat1right.png" class="slide-image" />
+    </div>
+  </div>
+</section>
+</section>
+
+<!-- PLACOSO -->
+<section id="placoso">
+  <div class="title">PLACOSO STUDIO</div>
+  <p style="text-align:center;color:var(--muted)">
+    Cyber streetwear brand from Mexico — identity through design and drops.
+  </p>
+</section>
+
+<!-- BURZACHE MUSIC -->
+<section id="burzache">
+  <div class="title">BURZACHE MILIONES</div>
+
+  <div class="player">
+    <h3 style="color:var(--blue)">Now Playing</h3>
+    <p style="color:var(--muted)">Underground sound session</p>
+
+    <audio controls>
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+    </audio>
+  </div>
+</section>
+
+<!-- MUZTY -->
+<section id="muzty">
+  <div class="title">MUZTYTRAPSTAR</div>
+  <p style="text-align:center;color:var(--muted)">
+    Trap identity — digital aggression and underground energy.
+  </p>
+</section>
+
+<!-- SHOP -->
+<section id="shop">
+  <div class="title">NEW DROP SHOP</div>
+
+  <div class="shop">
+
+    <div class="product">
+      <h3>CYBER HOODIE</h3>
+      <div class="price">$120 USD</div>
+      <a href="#" class="buy">BUY NOW</a>
+    </div>
+
+    <div class="product">
+      <h3>BLUE SIGNAL HAT</h3>
+      <div class="price">$60 USD</div>
+      <a href="#" class="buy">BUY NOW</a>
+    </div>
+
+    <div class="product">
+      <h3>STREET CORE TEE</h3>
+      <div class="price">$45 USD</div>
+      <a href="#" class="buy">BUY NOW</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 PLACOSO STUDIO — CYBER BLUE SYSTEM
+</footer>
+
+<script>
+window.addEventListener("load",()=>{
+  setTimeout(()=>{
+    document.getElementById("loader").style.display="none";
+  },1500);
+});
+</script>
+
+</body>
+</html>
