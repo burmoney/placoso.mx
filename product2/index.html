@@ -1,248 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
-  <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2172489443320001');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2172489443320001&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-
-
-
-  
-  <title>Placoso Studio | verify.html</title>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GT-WFM3ZNB3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'GT-WFM3ZNB3');
-</script>
-
-
-  
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Product Display</title>
-
-<!-- Google Fonts for style -->
-<link href='https://fonts.googleapis.com/css?family=Lato:300,400|Montserrat:700' rel='stylesheet' />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PLACOSO CAP</title>
 
 <style>
-  body {
-    background: linear-gradient(135deg, #f0f2f5, #ffffff);
-    font-family: 'Lato', 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 40px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-  }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
 
-  .product {
-    display: flex;
-    max-width: 1000px;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    overflow: hidden;
-    flex-wrap: wrap;
-  }
+body{
+    background:#0a0a0a;
+    color:white;
+}
 
-  /* Image section */
-  #productImages {
-    flex: 1 1 50%;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+/* Header */
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,.85);
+    backdrop-filter:blur(10px);
+}
 
-  .mainImage {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
+.logo{
+    font-size:1.5rem;
+    font-weight:bold;
+    letter-spacing:3px;
+}
 
-  .mainImage:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-  }
+.buy-btn{
+    background:white;
+    color:black;
+    padding:12px 24px;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+}
 
-  /* Info section */
-  .productInfo {
-    flex: 1 1 50%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+/* Hero Product */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:120px 8% 80px;
+    gap:60px;
+}
 
-  .title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2em;
-    color: #4a69ad;
-    margin-bottom: 10px;
-  }
+.hero img{
+    width:100%;
+    max-width:650px;
+}
 
-  .productId {
-    font-size: 0.9em;
-    color: #777;
-    margin-bottom: 15px;
-  }
+.info{
+    max-width:500px;
+}
 
-  .subProdInfo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-  }
+.badge{
+    color:#c5a46d;
+    font-weight:bold;
+    letter-spacing:2px;
+    margin-bottom:15px;
+}
 
-  .price {
-    font-size: 1.5em;
-    color: #28a745;
-    font-weight: 700;
-  }
+h1{
+    font-size:4rem;
+    line-height:1;
+    margin-bottom:20px;
+}
 
-  .stock {
-    padding: 6px 12px;
-    background-color: #28a745;
-    color: #fff;
-    border-radius: 20px;
-    font-size: 0.9em;
-    font-weight: 600;
-  }
+.description{
+    color:#cfcfcf;
+    margin-bottom:30px;
+    line-height:1.8;
+}
 
-  p {
-    font-size: 1em;
-    margin-bottom: 20px;
-    color: #555;
-  }
+.price{
+    font-size:2rem;
+    font-weight:bold;
+    margin-bottom:30px;
+}
 
-  label {
-    font-weight: 600;
-    margin-bottom: 8px;
-    display: block;
-  }
+.cta{
+    display:inline-block;
+    background:white;
+    color:black;
+    text-decoration:none;
+    padding:16px 40px;
+    border-radius:40px;
+    font-weight:bold;
+}
 
-  a {
-    color: #4a69ad;
-    text-decoration: underline;
-  }
+/* Features */
+.features{
+    background:#111;
+    padding:80px 8%;
+}
 
-  .select-wrapper {
-    margin-bottom: 20px;
-  }
+.features-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
 
-  select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 1em;
-    transition: border-color 0.2s;
-  }
+.feature{
+    text-align:center;
+    padding:30px;
+}
 
-  select:focus {
-    outline: none;
-    border-color: #4a69ad;
-    box-shadow: 0 0 8px rgba(74, 105, 173, 0.2);
-  }
+.feature h3{
+    margin:15px 0;
+}
 
-  /* Button styles */
-  #button {
-    margin-top: 20px;
-    text-align: center;
-  }
+/* Lifestyle */
+.story{
+    text-align:center;
+    padding:120px 8%;
+}
 
-  #button a button {
-    width: 100%;
-    max-width: 250px;
-    padding: 14px 20px;
-    font-size: 1.2em;
-    font-family: 'Montserrat', sans-serif;
-    border: none;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: #fff;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-  }
+.story h2{
+    font-size:3rem;
+    margin-bottom:20px;
+}
 
-  #button a button:hover {
-    background: linear-gradient(135deg, #764ba2, #667eea);
-    transform: translateY(-2px);
-  }
+.story p{
+    max-width:700px;
+    margin:auto;
+    color:#cfcfcf;
+    line-height:1.8;
+}
 
-  /* Responsive styles */
-  @media(max-width: 768px) {
-    .product {
-      flex-direction: column;
-    }
-    #productImages, .productInfo {
-      flex: 1 1 100%;
-    }
-  }
+footer{
+    text-align:center;
+    padding:30px;
+    color:#888;
+    border-top:1px solid #222;
+}
+
+@media(max-width:900px){
+
+.hero{
+    flex-direction:column;
+    text-align:center;
+}
+
+h1{
+    font-size:3rem;
+}
+
+}
 </style>
 </head>
 <body>
- 
+
+<header>
+    <div class="logo">PLACOSO</div>
+    <a href="#" class="buy-btn">BUY NOW</a>
+</header>
+
+<section class="hero">
+
+    <img src="https://raw.githubusercontent.com/burmoney/www.placosostudio.com/refs/heads/gh-pages/images/placoso2.jpg" alt="Placoso Cap">
+   
 
 
-<div class="product">
-  <!-- Single Main Image -->
-  <div id="productImages">
-    <img src="https://raw.githubusercontent.com/burzachem/mustytrapstar/gh-pages/images/muztymarch2.jpg" alt="Product Image" class="mainImage" />
-  </div>
+    <div class="info">
 
-  <!-- Product Info -->
-  <div class="productInfo">
-    <div>
-      <h1 class="title">White Floral Drip Sublimation T-Shirt</h1>
-      <span class="productId">Product: IreUQgxbjmPWoGawg</span>
-      <div class="subProdInfo">
-        <div class="price">£25.00</div>
-        <div class="stock">In Stock</div>
-      </div>
-      <p>white-t box logo</p>
-      <label>Sizes: <a href="#">Size Chart</a></label>
-      <div class="select-wrapper">
-        <select>
-          <option>S</option>
-          <option>M</option>
-          <option>L</option>
-          <option>XL</option>
-          <option>XXL</option>
-          <option>XXXL</option>
-        </select>
-      </div>
+        <div class="badge">
+            LIMITED RELEASE
+        </div>
+
+        <h1>THE PLACOSO CAP</h1>
+
+        <p class="description">
+            Handmade. Minimal. Timeless.
+            Designed for everyday wear with premium materials,
+            clean embroidery, and a structured fit.
+        </p>
+
+        <div class="price">$49 USD</div>
+
+        <a href="#" class="cta">
+            ADD TO CART
+        </a>
+
     </div>
 
-    <!-- Add to Cart Button -->
-    <div id="button">
-      <a href="../cart/index.html"><button>Add to Cart</button></a>
+</section>
+
+<section class="features">
+
+    <div class="features-grid">
+
+        <div class="feature">
+            <h3>Premium Materials</h3>
+            <p>Built for comfort and durability.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Worldwide Shipping</h3>
+            <p>Delivered anywhere in the world.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Handcrafted</h3>
+            <p>Made with attention to every detail.</p>
+        </div>
+
     </div>
-  </div>
-</div>
+
+</section>
+
+<section class="story">
+
+    <h2>NO QUEREMOS NADA.<br>SOMOS TODO.</h2>
+
+    <p>
+        More than a cap. A statement.
+        Placoso represents individuality, creativity,
+        and the confidence to move differently.
+    </p>
+
+</section>
+
+<footer>
+    © 2026 PLACOSO STUDIO
+</footer>
 
 </body>
 </html>
