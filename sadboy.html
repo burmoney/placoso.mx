@@ -1,437 +1,380 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PLACOSO STUDIO | Cyber Drop</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&amp;display=swap" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sad Boyz | Streetwear</title>
+
 <style>
-/* Your CSS styles here, unchanged */
-#slideshow {
-      position: relative;
-      width: 300px;
-      height: 300px;
-      margin: 30px auto;
-      overflow: hidden;
-    }
-
-.slide-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
-
-.slide-image:nth-child(1) { animation: fade 4s infinite; }
-.slide-image:nth-child(2) { animation: fade 4s infinite 1s; }
-.slide-image:nth-child(3) { animation: fade 4s infinite 2s; }
-.slide-image:nth-child(4) { animation: fade 4s infinite 3s; }
-
-@keyframes fade {
-      0%, 25% { opacity: 0; }
-      12.5%, 12.5% { opacity: 1; }
-      100% { opacity: 0; }
-    }
-
-.hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      background: radial-gradient(circle at center, #111 0%, #000 100%);
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-.hero h2 {
-      font-size: 3rem;
-      font-weight: 800;
-      background: linear-gradient(to right, #ff2e63, #ff4d7d);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 20px;
-    }
-
-.hero p {
-      font-size: 1.2rem;
-      color: #bbb;
-      max-width: 700px;
-      margin: auto;
-      margin-bottom: 40px;
-      line-height: 1.5;
-    }
-
-.btn {
-      padding: 16px 40px;
-      border: 2px solid #ff2e63;
-      color: #fff;
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 50px;
-      transition: all 0.3s ease;
-      background: linear-gradient(135deg, transparent, transparent), linear-gradient(135deg, #ff2e63, #ff4d7d);
-      background-blend-mode: overlay;
-      box-shadow: inset 0 0 0 #ff2e63, 0 0 20px #ff2e63, inset 0 0 10px #ff2e63;
-    }
-
-.btn:hover {
-      background: #fff;
-      color: #ff2e63;
-      box-shadow: 0 0 30px #ff2e63, inset 0 0 0 #ff2e63;
-      transform: translateY(-2px);
-    }
-
-.section {
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
-      text-align: center;
-    }
-
-section h3 {
-      font-size: 2.4rem;
-      margin-bottom: 30px;
-    }
- 
-:root{
-  --bg:#050505;
-  --card:#0d0d0d;
-  --pink:#ff2e63;
-  --pink2:#ff4d7d;
-  --text:#ffffff;
-  --muted:#b8b8b8;
-}
-
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Inter',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    scroll-behavior:smooth;
 }
 
 body{
-  background:var(--bg);
-  color:var(--text);
-  overflow-x:hidden;
+    background:#0f0f0f;
+    color:#fff;
 }
 
-/* ================= NAVBAR (your full structure upgraded) ================= */
-
-#navbar1{
-  background:rgba(0,0,0,.55);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(255,255,255,.08);
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index:9999;
+/* Header */
+header{
+    background:#000;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
-.nav-list{
-  list-style:none;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:12px 25px;
-  flex-wrap:wrap;
+.logo{
+    font-size:32px;
+    font-weight:bold;
+    color:#00d4ff;
 }
 
-.nav-item{
-  position:relative;
+nav ul{
+    display:flex;
+    list-style:none;
 }
 
-.logo-container img{
-  max-height:90px;
-  filter:drop-shadow(0 0 10px rgba(255,46,99,.4));
+nav ul li{
+    margin-left:30px;
 }
 
-/* links */
-.nav-link{
-  color:white;
-  text-decoration:none;
-  padding:10px 14px;
-  font-size:.85rem;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  transition:.3s;
+nav ul li a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
 }
 
-.nav-link:hover{
-  color:var(--pink);
+nav ul li a:hover{
+    color:#00d4ff;
 }
 
-/* dropdown */
-.dropdown-menu{
-  display:none;
-  position:absolute;
-  top:100%;
-  left:0;
-  background:#0d0d0d;
-  border:1px solid rgba(255,255,255,.08);
-  min-width:200px;
-  z-index:9999;
-}
-
-.dropdown-menu.show{
-  display:block;
-}
-
-.dropdown-menu li a{
-  padding:10px 15px;
-  display:block;
-  color:white;
-}
-
-.dropdown-menu li a:hover{
-  background:rgba(255,46,99,.1);
-}
-
-/* ================= HERO ================= */
-
+/* Hero */
 .hero{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:140px 20px 80px;
-  background:
-  radial-gradient(circle at top, rgba(255,46,99,.25), transparent 60%),
-  radial-gradient(circle at bottom, rgba(255,77,125,.15), transparent 60%),
-  #050505;
+    height:90vh;
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    url("https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
 }
 
-.hero h1{
-  font-size:4rem;
-  font-weight:900;
-  letter-spacing:4px;
-  text-transform:uppercase;
-  background:linear-gradient(90deg,var(--pink),var(--pink2));
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+.hero-content h1{
+    font-size:60px;
+    margin-bottom:20px;
 }
 
-.hero p{
-  max-width:650px;
-  margin-top:20px;
-  color:var(--muted);
-  font-size:1.1rem;
+.hero-content p{
+    font-size:22px;
+    margin-bottom:35px;
 }
 
-/* button */
 .btn{
-  margin-top:35px;
-  padding:14px 40px;
-  border:1px solid var(--pink);
-  color:white;
-  text-decoration:none;
-  border-radius:50px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  transition:.3s;
+    display:inline-block;
+    padding:15px 35px;
+    background:#00d4ff;
+    color:#000;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:30px;
+    transition:.3s;
 }
 
 .btn:hover{
-  background:var(--pink);
-  transform:translateY(-3px);
-  box-shadow:0 0 40px rgba(255,46,99,.5);
+    background:#fff;
 }
 
-/* ================= SLIDESHOW ================= */
+/* Products */
 
-.slideshow{
-  margin-top:50px;
-  width:300px;
-  height:300px;
-  position:relative;
+.products{
+    padding:80px 8%;
 }
 
-.slideshow img{
-  position:absolute;
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  opacity:0;
-  animation:fade 8s infinite;
+.products h2{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:40px;
 }
 
-.slideshow img:nth-child(1){animation-delay:0s;}
-.slideshow img:nth-child(2){animation-delay:2s;}
-.slideshow img:nth-child(3){animation-delay:4s;}
-.slideshow img:nth-child(4){animation-delay:6s;}
-
-@keyframes fade{
-  0%{opacity:0;}
-  10%{opacity:1;}
-  25%{opacity:1;}
-  35%{opacity:0;}
-  100%{opacity:0;}
-}
-
-/* ================= SECTIONS ================= */
-
-.section{
-  padding:80px 20px;
-  max-width:1100px;
-  margin:auto;
-}
-
-.section h2{
-  text-align:center;
-  font-size:2.5rem;
-  margin-bottom:40px;
-  letter-spacing:3px;
-}
-
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
 }
 
 .card{
-  background:var(--card);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:18px;
-  padding:25px;
-  transition:.3s;
+    background:#1c1c1c;
+    border-radius:12px;
+    overflow:hidden;
+    transition:.35s;
+    box-shadow:0 0 10px rgba(0,0,0,.4);
 }
 
 .card:hover{
-  transform:translateY(-10px);
-  border-color:var(--pink);
-  box-shadow:0 10px 40px rgba(255,46,99,.15);
+    transform:translateY(-10px);
+    box-shadow:0 15px 30px rgba(0,212,255,.35);
 }
 
-.card h3{
-  color:var(--pink);
-  margin-bottom:10px;
-  letter-spacing:2px;
+.card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
 }
 
-.card p{
-  color:var(--muted);
-  font-size:.9rem;
+.card-content{
+    padding:20px;
 }
 
-/* ================= FOOTER ================= */
+.card-content h3{
+    margin-bottom:10px;
+}
+
+.card-content p{
+    color:#ccc;
+    margin-bottom:15px;
+}
+
+.price{
+    color:#00d4ff;
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    background:#00d4ff;
+    color:#000;
+    font-weight:bold;
+    font-size:16px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#fff;
+}
+
+/* About */
+
+.about{
+    background:#181818;
+    padding:80px 8%;
+    text-align:center;
+}
+
+.about h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.about p{
+    max-width:700px;
+    margin:auto;
+    color:#ccc;
+    line-height:1.8;
+}
+
+/* Contact */
+
+.contact{
+    padding:80px 8%;
+    text-align:center;
+}
+
+.contact h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.contact p{
+    margin:10px 0;
+    color:#ccc;
+}
+
+/* Footer */
 
 footer{
-  padding:50px 20px;
-  text-align:center;
-  color:var(--muted);
-  border-top:1px solid rgba(255,255,255,.08);
-  margin-top:80px;
+    background:#000;
+    text-align:center;
+    padding:20px;
+    color:#aaa;
 }
 
-/* mobile fix */
-@media(max-width:768px){
-  .nav-list{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:10px;
-  }
+/* Responsive */
 
-  .hero h1{
-    font-size:2.8rem;
-  }
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+}
+
+nav ul{
+margin-top:20px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+nav ul li{
+margin:10px;
+}
+
+.hero-content h1{
+font-size:40px;
+}
+
+.hero-content p{
+font-size:18px;
+}
+
 }
 </style>
+
 </head>
 <body>
-<!-- ================= NAVBAR (FULL YOUR ORIGINAL LINKS KEPT) ================= -->
-<div id="navbar1">
-  <nav aria-label="Main Navigation">
-    <ul class="nav-list">
-      <li class="nav-item">
-        <div class="logo-container">
-          <a href="/home">
-            <!-- Logo image removed -->
-          </a>
-        </div>
-      </li>
-      <li class="nav-item has-dropdown">
-        <a href="#" class="nav-link" onclick="toggleDropdown(event)">
-          Colecciones ▼
-        </a>
-        <ul class="dropdown-menu">
-          <li class="has-dropdown">
-            <a href="#" class="nav-link" onclick="toggleDropdown(event)">Clásico ▼</a>
-            <ul class="dropdown-menu">
-              <li><a href="/product1">Product 1</a></li>
-              <li><a href="/product2">Product 2</a></li>
-              <li><a href="/product3">Product 3</a></li>
-            </ul>
-          </li>
-          <li><a href="/">Home</a></li>
-          <li><a href="/shop">Shop</a></li>
-          <li><a href="/about">About Us</a></li>
-          <li><a href="/get.placosostudio.plus">Placoso app Download</a></li>
-          <li><a href="/contact">Contact</a></li>
-          <li><a href="/privacy-policy">Privacy Policy</a></li>
-          <li><a href="/terms-and-conditions">Terms &amp; Conditions</a></li>
-          <li><a href="/disclaimer">Disclaimer</a></li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a href="/contact" class="nav-link">Contacto</a>
-      </li>
-    </ul>
-  </nav>
+
+<header>
+
+<div class="logo">
+Sad Boyz
 </div>
 
-<!-- ================= HERO ================= -->
-<section class="hero">
-  <h1>Built From Pain</h1>
-  <p>
-    Placoso Studio is cyber-streetwear identity. Not fashion. Not trends. A signal of survival.
-  </p>
-  <a class="btn" href="/home">Enter Drop</a>
-  <div class="slideshow-container">
-    <div id="slideshow">
-      <!-- Images removed -->
-    </div>
-  </div>
+<nav>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+</header>
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>Wear Your Feelings.</h1>
+
+<p>Premium streetwear made for those who express themselves.</p>
+
+<a href="#products" class="btn">Shop Now</a>
+
+</div>
+
 </section>
 
-<!-- ================= DROP ================= -->
-<section class="section">
-  <h2>NEW DROP</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>CYBER HAT</h3>
-      <p>Limited streetwear piece built for identity.</p>
-    </div>
-    <div class="card">
-      <h3>BLACK CORE</h3>
-      <p>Minimal underground premium design.</p>
-    </div>
-    <div class="card">
-      <h3>PINK SIGNAL</h3>
-      <p>Neon expression for the new generation.</p>
-    </div>
-  </div>
+<section class="products" id="products">
+
+<h2>Featured Products</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80" alt="Hoodie">
+
+<div class="card-content">
+
+<h3>Sad Boy Hoodie</h3>
+
+<p>Oversized premium cotton hoodie for everyday comfort.</p>
+
+<div class="price">$49.99</div>
+
+<button>Buy Now</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=800&q=80" alt="T-Shirt">
+
+<div class="card-content">
+
+<h3>Lonely T-Shirt</h3>
+
+<p>Minimal streetwear with soft breathable fabric.</p>
+
+<div class="price">$24.99</div>
+
+<button>Buy Now</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=800&q=80" alt="Cap">
+
+<div class="card-content">
+
+<h3>Melancholy Cap</h3>
+
+<p>Classic embroidered cap with adjustable fit.</p>
+
+<div class="price">$19.99</div>
+
+<button>Buy Now</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="about" id="about">
+
+<h2>About Sad Boyz</h2>
+
+<p>
+Sad Boyz is a streetwear brand inspired by emotion, creativity,
+and individuality. Our mission is to create stylish apparel that
+lets everyone express themselves with confidence.
+</p>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h2>Contact Us</h2>
+
+<p>Email: sadboyz@example.com</p>
+
+<p>Phone: +1 (555) 123-4567</p>
+
+<p>Instagram: @sadboyz</p>
+
 </section>
 
 <footer>
-  © 2026 PLACOSO STUDIO — CYBER STREETWEAR
+
+<p>&copy; 2026 Sad Boyz. All Rights Reserved.</p>
+
 </footer>
 
-<script>
-function toggleDropdown(e){
-  e.preventDefault();
-  const menu = e.target.nextElementSibling;
-  if(menu){
-    menu.classList.toggle('show');
-  }
-}
-</script>
-
-<!-- Additional sound visualizer elements omitted -->
 </body>
 </html>
