@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Placoso</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:700px;
+    background:#fff;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.question{
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:15px;
+}
+
+textarea{
+    resize:vertical;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:6px;
+    background:#000;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#222;
+}
+
+#status{
+    text-align:center;
+    margin-top:20px;
+    color:green;
+    font-weight:bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Contact Us</h1>
+
+<form id="myForm"
+action="https://docs.google.com/forms/d/e/1FAIpQLScIigmHACq981IIqaX5iwciALXxs1Nv8BgoiGuwjSXqpt8iBA/formResponse"
+method="POST"
+target="hidden_iframe">
+
+<div class="question">
+<label>Subject</label>
+<input type="text" name="entry.442685604" required>
+</div>
+
+<div class="question">
+<label>Email Body</label>
+<input type="text" name="entry.2103489335" required>
+</div>
+
+<div class="question">
+<label>Name</label>
+<input type="text" name="entry.57869402" required>
+</div>
+
+<div class="question">
+<label>Message</label>
+<textarea name="entry.1113147776" rows="5" required></textarea>
+</div>
+
+<div class="question">
+<label>Email</label>
+<input type="email" name="entry.1958028264" required>
+</div>
+
+<button type="submit">Send Message</button>
+
+<p id="status"></p>
+
+</form>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+</div>
+
+<script>
+
+const form=document.getElementById("myForm");
+const status=document.getElementById("status");
+
+form.addEventListener("submit",function(){
+
+    status.innerHTML="Sending...";
+
+    setTimeout(function(){
+
+        status.innerHTML="Message sent successfully!";
+
+        window.location.href="https://www.placosostudio.com/";
+
+    },2000);
+
+});
+
+</script>
+
+</body>
+</html>
